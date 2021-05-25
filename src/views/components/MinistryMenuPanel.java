@@ -39,6 +39,7 @@ public class MinistryMenuPanel extends JPanel implements ActionListener {
             JButton btn = new JButton(btnText);
             btn.setActionCommand(btnText);
             btn.addActionListener(this);
+            btn.setFont(new Font("Aria", Font.PLAIN, 20));
             // Add to list
             buttons.add(btn);
         }

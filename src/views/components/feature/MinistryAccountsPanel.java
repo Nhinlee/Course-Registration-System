@@ -1,17 +1,12 @@
 package views.components.feature;
 
 import javax.swing.*;
-import javax.swing.border.BevelBorder;
 import javax.swing.border.Border;
-import javax.swing.table.AbstractTableModel;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.LinkedList;
 import java.util.List;
 
 public class MinistryAccountsPanel extends JPanel implements ActionListener {
@@ -61,11 +56,13 @@ public class MinistryAccountsPanel extends JPanel implements ActionListener {
         //
         tfSearch = new JTextField("search", 50);
         tfSearch.setBorder(myButtonBorder());
+        tfSearch.setFont(myFont());
         //
         btnSearch = new JButton(searchString);
         btnSearch.addActionListener(this);
         btnSearch.setActionCommand(searchString);
         btnSearch.setBorder(myButtonBorder());
+        btnSearch.setFont(myFont());
         //
         searchBarPanel.add(tfSearch);
         searchBarPanel.add(btnSearch);
@@ -80,6 +77,7 @@ public class MinistryAccountsPanel extends JPanel implements ActionListener {
             button.setActionCommand(text);
             button.addActionListener(this);
             button.setBorder(myButtonBorder());
+            button.setFont(myFont());
             //
             btnFeatures.add(button);
             //
@@ -117,12 +115,7 @@ public class MinistryAccountsPanel extends JPanel implements ActionListener {
         // ------------------------------------------------------------------------------
     }
 
-    private Border myButtonBorder() {
-        return BorderFactory.createCompoundBorder(
-                BorderFactory.createLineBorder(Color.GRAY),
-                BorderFactory.createEmptyBorder(10, 16, 10, 16)
-        );
-    }
+
 
     private DefaultTableModel getTableModel() {
         DefaultTableModel model = new DefaultTableModel();
@@ -158,5 +151,18 @@ public class MinistryAccountsPanel extends JPanel implements ActionListener {
                 model.removeRow(row);
             }
         }
+    }
+
+    // Decorate
+
+    private Border myButtonBorder() {
+        return BorderFactory.createCompoundBorder(
+                BorderFactory.createLineBorder(Color.GRAY),
+                BorderFactory.createEmptyBorder(10, 16, 10, 16)
+        );
+    }
+
+    private Font myFont() {
+        return new Font("Aria", Font.PLAIN, 14);
     }
 }
