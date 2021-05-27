@@ -5,37 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f16ff818-d8f3-480d-90ea-b529634ec9fa" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Hibernate_5_4_11_5_4_11.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/postgresql_42_2_19.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/mapping/Clazz.hbm.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/mapping/Course.hbm.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/mapping/CourseRegistrationSession.hbm.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/mapping/MinistryAccount.hbm.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/mapping/Registration.hbm.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/mapping/Semester.hbm.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/mapping/Student.hbm.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/mapping/Subject.hbm.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/model/Clazz.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/model/Course.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/model/CourseRegistrationSession.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/model/MinistryAccount.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/model/Registration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/model/Semester.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/model/Student.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/model/Subject.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/model/base/IBaseModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/model/base/IDoJob.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hibernate.cfg.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/ColumnNameHelper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/UIDecoratorUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/view/base/EditMinistryAccountPanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/view/base/EditMode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/view/base/SaveEditingCallback.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Course-Registration-System.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Course-Registration-System.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/data/dao/MinistryAccountDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/dao/MinistryAccountDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/dao/base/BaseDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/dao/base/IBaseDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/HibernateUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/HibernateUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/model/base/IBaseModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/model/base/IBaseModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/components/MinistryAccountsPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/components/MinistryAccountsPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../db/course-registration-db-project.pgerd" beforeDir="false" afterPath="$PROJECT_DIR$/../db/course-registration-db-project.pgerd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/components/MinistryMenuPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/MinistryMenuPanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,6 +27,7 @@
         <option value="hibernate-configuration-5.2" />
         <option value="Class" />
         <option value="Interface" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -196,7 +176,7 @@
       <option name="presentableId" value="Default" />
       <updated>1622089126808</updated>
       <workItem from="1622089128398" duration="2198000" />
-      <workItem from="1622093181235" duration="7963000" />
+      <workItem from="1622093181235" duration="23069000" />
     </task>
     <servers />
   </component>

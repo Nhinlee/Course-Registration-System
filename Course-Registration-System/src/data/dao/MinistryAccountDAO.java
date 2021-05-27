@@ -5,6 +5,7 @@ import data.model.MinistryAccount;
 import data.model.base.IDoJob;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
+import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 import utils.HibernateUtil;
 
@@ -33,7 +34,7 @@ public class MinistryAccountDAO implements IBaseDAO<MinistryAccount> {
         HibernateUtil.openSessionAndDoJob(new IDoJob() {
             @Override
             public void doJob(Session session) {
-                account[0] = (MinistryAccount) session.get(MinistryAccount.class, id);
+                account[0] = session.get(MinistryAccount.class, id);
             }
         });
         return account[0];
@@ -41,24 +42,79 @@ public class MinistryAccountDAO implements IBaseDAO<MinistryAccount> {
 
     @Override
     public boolean insert(MinistryAccount obj) {
-        Session session = null;
-        try {
-            session = HibernateUtil.getSessionFactory().openSession();
-            String insertHQL = "";
-            Query query = session.createQuery(insertHQL);
-        } catch (HibernateException e) {
-            System.err.println(e);
-        }
-        return false;
+        final boolean[] result = {true};
+        HibernateUtil.openSessionAndDoJob(new IDoJob() {
+            @Override
+            public void doJob(Session session) {
+                if (getById(obj.getMinistryId()) != null) {
+                    result[0] = false;
+                    return;
+                }
+                Transaction transaction = null;
+                try {
+                    transaction = session.beginTransaction();
+                    session.save(obj);
+                    transaction.commit();
+                } catch (HibernateException e) {
+                    assert transaction != null;
+                    transaction.rollback();
+                    System.err.println(e);
+                    result[0] = false;
+                }
+            }
+        });
+        return result[0];
     }
 
     @Override
     public boolean update(MinistryAccount obj) {
-        return false;
+        final boolean[] result = {true};
+        HibernateUtil.openSessionAndDoJob(new IDoJob() {
+            @Override
+            public void doJob(Session session) {
+                Transaction transaction = null;
+                try {
+                    transaction = session.beginTransaction();
+                    session.update(obj);
+                    transaction.commit();
+                } catch (HibernateException e) {
+                    assert transaction != null;
+                    transaction.rollback();
+                    System.err.println(e);
+                    result[0] = false;
+                }
+            }
+        });
+        return result[0];
     }
 
     @Override
     public boolean delete(String id) {
-        return false;
+        final boolean[] result = {true};
+        HibernateUtil.openSessionAndDoJob(new IDoJob() {
+            @Override
+            public void doJob(Session session) {
+                Transaction transaction = null;
+                try {
+                    // Get by id
+                    MinistryAccount account = getById(id);
+                    if (account == null) {
+                        result[0] = false;
+                        return;
+                    }
+
+                    // Delete
+                    transaction = session.beginTransaction();
+                    session.delete(account);
+                    transaction.commit();
+                } catch (HibernateException e) {
+                    assert transaction != null;
+                    transaction.rollback();
+                    System.err.println(e);
+                    result[0] = false;
+                }
+            }
+        });
+        return result[0];
     }
 }

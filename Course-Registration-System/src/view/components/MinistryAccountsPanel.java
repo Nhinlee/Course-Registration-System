@@ -3,9 +3,11 @@ package view.components;
 import data.dao.MinistryAccountDAO;
 import data.model.MinistryAccount;
 import utils.ColumnNameHelper;
+import utils.UIDecoratorUtil;
+import view.base.EditMinistryAccountPanel;
+import view.base.SaveEditingCallback;
 
 import javax.swing.*;
-import javax.swing.border.Border;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -13,28 +15,24 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MinistryAccountsPanel extends JPanel implements ActionListener {
+public class MinistryAccountsPanel extends JPanel implements ActionListener, SaveEditingCallback {
 
     private final String searchString = "Search";
 
     private final String addNewString = "Add New";
     private final String deleteString = "Delete";
-    private final String editString = "Edit";
+    private final String updateString = "Update";
     private final String resetString = "Reset Password";
-    private final String[] btnTexts = {
-            addNewString,
-            editString,
-            resetString,
-            deleteString,
-    };
 
     private JTextField tfSearch;
     private JButton btnSearch;
     private List<JButton> btnFeatures = new ArrayList<>();
     private JTable table;
+    private DefaultTableModel model;
+    private JFrame editFrame = new JFrame();
 
     // Data Access Object
-    private MinistryAccountDAO ministryAccountDAO = new MinistryAccountDAO();
+    private final MinistryAccountDAO ministryAccountDAO = new MinistryAccountDAO();
 
 
     public MinistryAccountsPanel() {
@@ -47,14 +45,14 @@ public class MinistryAccountsPanel extends JPanel implements ActionListener {
         JPanel searchBarPanel = new JPanel(new FlowLayout());
         //
         tfSearch = new JTextField("search", 50);
-        tfSearch.setBorder(myButtonBorder());
-        tfSearch.setFont(myFont());
+        tfSearch.setBorder(UIDecoratorUtil.customBorder());
+        tfSearch.setFont(UIDecoratorUtil.customFont());
         //
         btnSearch = new JButton(searchString);
         btnSearch.addActionListener(this);
         btnSearch.setActionCommand(searchString);
-        btnSearch.setBorder(myButtonBorder());
-        btnSearch.setFont(myFont());
+        btnSearch.setBorder(UIDecoratorUtil.customBorder());
+        btnSearch.setFont(UIDecoratorUtil.customFont());
         //
         searchBarPanel.add(tfSearch);
         searchBarPanel.add(btnSearch);
@@ -63,13 +61,19 @@ public class MinistryAccountsPanel extends JPanel implements ActionListener {
         // -- Feature button panel
         JPanel btnFeaturesPanel = new JPanel(new FlowLayout());
         //
+        String[] btnTexts = {
+                addNewString,
+                updateString,
+                resetString,
+                deleteString,
+        };
         for (String text : btnTexts) {
             //
             JButton button = new JButton(text);
             button.setActionCommand(text);
             button.addActionListener(this);
-            button.setBorder(myButtonBorder());
-            button.setFont(myFont());
+            button.setBorder(UIDecoratorUtil.customBorder());
+            button.setFont(UIDecoratorUtil.customFont());
             //
             btnFeatures.add(button);
             //
@@ -78,7 +82,9 @@ public class MinistryAccountsPanel extends JPanel implements ActionListener {
         // ------------------------------------------------------------------------------
 
         // -- Table panel
-        table = new JTable(getTableModel());
+        model = new DefaultTableModel();
+        table = new JTable(model);
+        resetTableData();
         // -- -- Logic interactive
         table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         table.setRowSelectionAllowed(true);
@@ -108,9 +114,10 @@ public class MinistryAccountsPanel extends JPanel implements ActionListener {
     }
 
 
-    private DefaultTableModel getTableModel() {
-        DefaultTableModel model = new DefaultTableModel();
+    private void resetTableData() {
         List<MinistryAccount> accounts = ministryAccountDAO.getAll();
+        model.setRowCount(0);
+        model.setColumnCount(0);
         // Add column name
         for (String column : ColumnNameHelper.ministryAccount) {
             model.addColumn(column);
@@ -120,40 +127,57 @@ public class MinistryAccountsPanel extends JPanel implements ActionListener {
         for (MinistryAccount account : accounts) {
             model.addRow(account.toRow());
         }
-
-        return model;
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         final String command = e.getActionCommand();
-        int column = 0;
-        int row = table.getSelectedRow();
+        int selectedRow = table.getSelectedRow();
 
-        if (command == deleteString) {
+        // Add new
+        if (command.equals(addNewString)) {
+            showEditPanel(null);
+        }
+
+        if (selectedRow < 0) return;
+        final String id = (String) table.getValueAt(selectedRow, 0);
+
+        // Delete
+        if (command.equals(deleteString)) {
             int confirm = JOptionPane.showConfirmDialog(
                     this,
                     "Do you wanna delete this account?",
                     "Delete!",
                     JOptionPane.YES_NO_OPTION
             );
-            if (confirm == JOptionPane.YES_OPTION && row >= 0) {
+            if (confirm == JOptionPane.YES_OPTION) {
                 DefaultTableModel model = (DefaultTableModel) table.getModel();
-                model.removeRow(row);
+                // Update DB
+                ministryAccountDAO.delete(id);
+                // Update UI
+                model.removeRow(selectedRow);
             }
+        }
+
+        // Update
+        if (command.equals(updateString)) {
+            showEditPanel(ministryAccountDAO.getById(id));
         }
     }
 
-    // Decorate
-
-    private Border myButtonBorder() {
-        return BorderFactory.createCompoundBorder(
-                BorderFactory.createLineBorder(Color.GRAY),
-                BorderFactory.createEmptyBorder(10, 16, 10, 16)
-        );
+    private void showEditPanel(MinistryAccount account) {
+        // set content pane
+        editFrame.setContentPane(new EditMinistryAccountPanel(account, this));
+        // show edit frame
+        editFrame.pack();
+        editFrame.setVisible(true);
     }
 
-    private Font myFont() {
-        return new Font("Aria", Font.PLAIN, 14);
+    @Override
+    public void onSaved() {
+        // Close edit frame
+        editFrame.setVisible(false);
+        // Update UI
+        resetTableData();
     }
 }

@@ -1,12 +1,10 @@
 
-import data.dao.MinistryAccountDAO;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import utils.HibernateUtil;
-import view.components.MinistryMenuPanel;
+import view.MinistryMenuPanel;
 
 import javax.swing.*;
-import java.util.List;
 
 public class Main {
 
