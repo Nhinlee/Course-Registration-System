@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!--Properties-->
+        <property name="connection.url">jdbc:postgresql://localhost:5432/course-registration-db</property>
+        <property name="connection.driver_class">org.postgresql.Driver</property>
+        <property name="connection.username">nhinlee</property>
+        <property name="connection.password">123456</property>
+
+        <property name="show_sql">true</property>
+
+        <!--Mapping Files-->
+        <mapping resource="data/mapping/Clazz.hbm.xml"/>
+        <mapping resource="data/mapping/Course.hbm.xml"/>
+        <mapping resource="data/mapping/CourseRegistrationSession.hbm.xml"/>
+        <mapping resource="data/mapping/MinistryAccount.hbm.xml"/>
+        <mapping resource="data/mapping/Registration.hbm.xml"/>
+        <mapping resource="data/mapping/Semester.hbm.xml"/>
+        <mapping resource="data/mapping/Student.hbm.xml"/>
+        <mapping resource="data/mapping/Subject.hbm.xml"/>
+    </session-factory>
+</hibernate-configuration>

@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="data.model.Semester" table="semester" schema="public" catalog="course-registration-db">
+        <id name="semesterId">
+            <column name="semester_id" sql-type="varchar(45)" length="45"/>
+        </id>
+        <property name="semesterName">
+            <column name="semester_name" sql-type="varchar(45)" length="45"/>
+        </property>
+        <property name="schoolYear">
+            <column name="school_year" sql-type="varchar(45)" length="45"/>
+        </property>
+        <property name="startDate">
+            <column name="start_date" sql-type="date"/>
+        </property>
+        <property name="endDate">
+            <column name="end_date" sql-type="date"/>
+        </property>
+        <!--<property name="isCurrent">
+            <column name="is_current" sql-type="boolean" not-null="true"/>
+        </property>-->
+    </class>
+</hibernate-mapping>

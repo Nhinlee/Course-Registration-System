@@ -1,0 +1,9 @@
+INSERT INTO public.ministry_account(
+	ministry_id, username, password)
+	VALUES 
+	('ministry_001', 'root1', '123456'),
+	('ministry_002', 'root2', '123456'),	
+	('ministry_003', 'root3', '123456'),	
+	('ministry_004', 'root4', '123456'),	
+	('ministry_005', 'root5', '123456')
+;

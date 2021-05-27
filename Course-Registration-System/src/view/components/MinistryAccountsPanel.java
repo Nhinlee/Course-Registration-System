@@ -1,5 +1,9 @@
 package view.components;
 
+import data.dao.MinistryAccountDAO;
+import data.model.MinistryAccount;
+import utils.ColumnNameHelper;
+
 import javax.swing.*;
 import javax.swing.border.Border;
 import javax.swing.table.DefaultTableModel;
@@ -24,25 +28,13 @@ public class MinistryAccountsPanel extends JPanel implements ActionListener {
             deleteString,
     };
 
-    private String[] columnNames = {
-            "id",
-            "First Name",
-            "Last Name",
-            "Password",
-    };
-
-    private Object[][] data = {
-            {"1", "Nhin", "Le Chi", 123456,},
-            {"2", "Nhu", "Le Chi", 123456,},
-            {"3", "Cao", "Le Chi", 123456,},
-            {"4", "Nhat", "Le Chi", 123456,},
-    };
-
-
     private JTextField tfSearch;
     private JButton btnSearch;
     private List<JButton> btnFeatures = new ArrayList<>();
     private JTable table;
+
+    // Data Access Object
+    private MinistryAccountDAO ministryAccountDAO = new MinistryAccountDAO();
 
 
     public MinistryAccountsPanel() {
@@ -116,18 +108,17 @@ public class MinistryAccountsPanel extends JPanel implements ActionListener {
     }
 
 
-
     private DefaultTableModel getTableModel() {
         DefaultTableModel model = new DefaultTableModel();
-
+        List<MinistryAccount> accounts = ministryAccountDAO.getAll();
         // Add column name
-        for (String column : columnNames) {
+        for (String column : ColumnNameHelper.ministryAccount) {
             model.addColumn(column);
         }
 
         // Add data
-        for (Object[] row : data) {
-            model.addRow(row);
+        for (MinistryAccount account : accounts) {
+            model.addRow(account.toRow());
         }
 
         return model;

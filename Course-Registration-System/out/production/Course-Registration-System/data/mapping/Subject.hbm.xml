@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="data.model.Subject" table="subject" schema="public" catalog="course-registration-db">
+        <id name="subjectId">
+            <column name="subject_id" sql-type="varchar(45)" length="45"/>
+        </id>
+        <property name="subjectName">
+            <column name="subject_name" sql-type="text"/>
+        </property>
+        <property name="numberOfCredits">
+            <column name="number_of_credits" sql-type="smallint"/>
+        </property>
+    </class>
+</hibernate-mapping>

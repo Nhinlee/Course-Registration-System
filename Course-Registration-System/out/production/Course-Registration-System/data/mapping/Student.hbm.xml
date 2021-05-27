@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="data.model.Student" table="student" schema="public" catalog="course-registration-db">
+        <id name="studentId">
+            <column name="student_id" sql-type="varchar(10)" length="10"/>
+        </id>
+        <property name="username">
+            <column name="username" sql-type="text"/>
+        </property>
+        <property name="password">
+            <column name="password" sql-type="text"/>
+        </property>
+        <property name="fullName">
+            <column name="full_name" sql-type="text"/>
+        </property>
+        <property name="birthDay">
+            <column name="birth_day" sql-type="date" not-null="true"/>
+        </property>
+        <property name="address">
+            <column name="address" sql-type="text" not-null="true"/>
+        </property>
+        <property name="classId">
+            <column name="class_id" sql-type="varchar(45)" length="45"/>
+        </property>
+    </class>
+</hibernate-mapping>

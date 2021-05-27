@@ -1,7 +1,12 @@
 
+import data.dao.MinistryAccountDAO;
+import org.hibernate.HibernateException;
+import org.hibernate.Session;
+import utils.HibernateUtil;
 import view.components.MinistryMenuPanel;
 
 import javax.swing.*;
+import java.util.List;
 
 public class Main {
 
@@ -22,13 +27,16 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        SwingUtilities.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-                createAndShowGUI();
-            }
-        });
-        /*MinistryAccountDAO ministryAccountDAO = new MinistryAccountDAO();
-        ministryAccountDAO.getAll();*/
+        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+            SwingUtilities.invokeLater(new Runnable() {
+                @Override
+                public void run() {
+                    createAndShowGUI();
+                }
+            });
+        } catch (HibernateException e) {
+            System.err.println(e);
+        }
+
     }
 }
