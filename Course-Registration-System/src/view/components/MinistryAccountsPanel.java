@@ -1,4 +1,4 @@
-package views.components.feature;
+package view.components;
 
 import javax.swing.*;
 import javax.swing.border.Border;

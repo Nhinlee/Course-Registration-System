@@ -1,5 +1,5 @@
-import views.components.LoginPanel;
-import views.components.MinistryMenuPanel;
+
+import view.components.MinistryMenuPanel;
 
 import javax.swing.*;
 
@@ -28,5 +28,7 @@ public class Main {
                 createAndShowGUI();
             }
         });
+        /*MinistryAccountDAO ministryAccountDAO = new MinistryAccountDAO();
+        ministryAccountDAO.getAll();*/
     }
 }

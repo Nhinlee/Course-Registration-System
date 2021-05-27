@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="f16ff818-d8f3-480d-90ea-b529634ec9fa" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/Hibernate_5_4_11_5_4_11.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/postgresql_postgresql_8_3_606_jdbc4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/dao/MinistryAccountDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/dao/base/BaseDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/HibernateUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/view/components/LoginPanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/view/components/MinistryAccountsPanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/view/components/MinistryMenuPanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../src/data/dao/MinistryAccountDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../src/data/dao/base/BaseDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../src/data/mapping/Clazz.hbm.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../src/data/mapping/Course.hbm.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../src/data/mapping/CourseRegistrationSession.hbm.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../src/data/mapping/MinistryAccount.hbm.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../src/data/mapping/Registration.hbm.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../src/data/mapping/Semester.hbm.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../src/data/mapping/Student.hbm.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../src/data/mapping/Subject.hbm.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../src/data/model/Clazz.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../src/data/model/Course.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../src/data/model/CourseRegistrationSession.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../src/data/model/MinistryAccount.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../src/data/model/Registration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../src/data/model/RegistrationPK.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../src/data/model/Semester.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../src/data/model/Student.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../src/data/model/Subject.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../src/hibernate.cfg.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../src/utils/HibernateUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/sqldialects.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Course-Registration-System.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../Course-Registration-System.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../db/course-registration-db-project.pgerd" beforeDir="false" afterPath="$PROJECT_DIR$/../db/course-registration-db-project.pgerd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/Main.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1t6Udz3gPjyUtBj3NVmxDXX8KAA" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="untitled104" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="untitled104" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="untitled104" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="untitled104" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="untitled104" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="company" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/view" />
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="Course-Registration-System" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f16ff818-d8f3-480d-90ea-b529634ec9fa" name="Default Changelist" comment="" />
+      <created>1622089126808</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1622089126808</updated>
+      <workItem from="1622089128398" duration="344000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

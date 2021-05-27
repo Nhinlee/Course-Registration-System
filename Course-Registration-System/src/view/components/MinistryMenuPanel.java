@@ -1,6 +1,4 @@
-package views.components;
-
-import views.components.feature.MinistryAccountsPanel;
+package view.components;
 
 import javax.swing.*;
 import java.awt.*;

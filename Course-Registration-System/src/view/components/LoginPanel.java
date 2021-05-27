@@ -1,4 +1,4 @@
-package views.components;
+package view.components;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
