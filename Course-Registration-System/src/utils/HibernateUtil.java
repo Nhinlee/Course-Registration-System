@@ -4,6 +4,7 @@ import data.model.base.IDoJob;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
 public class HibernateUtil {
@@ -37,5 +38,50 @@ public class HibernateUtil {
             assert session != null;
             session.close();
         }
+    }
+
+    public static boolean saveToDB(Session session, Object obj) {
+        Transaction transaction = null;
+        try {
+            transaction = session.beginTransaction();
+            session.save(obj);
+            transaction.commit();
+        } catch (HibernateException e) {
+            assert transaction != null;
+            transaction.rollback();
+            System.err.println(e);
+            return false;
+        }
+        return true;
+    }
+
+    public static boolean updateToDB(Session session, Object obj) {
+        Transaction transaction = null;
+        try {
+            transaction = session.beginTransaction();
+            session.update(obj);
+            transaction.commit();
+        } catch (HibernateException e) {
+            assert transaction != null;
+            transaction.rollback();
+            System.err.println(e);
+            return false;
+        }
+        return true;
+    }
+
+    public static boolean deleteInDB(Session session, Object obj) {
+        Transaction transaction = null;
+        try {
+            transaction = session.beginTransaction();
+            session.delete(obj);
+            transaction.commit();
+        } catch (HibernateException e) {
+            assert transaction != null;
+            transaction.rollback();
+            System.err.println(e);
+            return false;
+        }
+        return true;
     }
 }

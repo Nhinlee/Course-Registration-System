@@ -3,9 +3,7 @@ package data.dao;
 import data.dao.base.IBaseDAO;
 import data.model.MinistryAccount;
 import data.model.base.IDoJob;
-import org.hibernate.HibernateException;
 import org.hibernate.Session;
-import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 import utils.HibernateUtil;
 
@@ -50,17 +48,7 @@ public class MinistryAccountDAO implements IBaseDAO<MinistryAccount> {
                     result[0] = false;
                     return;
                 }
-                Transaction transaction = null;
-                try {
-                    transaction = session.beginTransaction();
-                    session.save(obj);
-                    transaction.commit();
-                } catch (HibernateException e) {
-                    assert transaction != null;
-                    transaction.rollback();
-                    System.err.println(e);
-                    result[0] = false;
-                }
+                result[0] = HibernateUtil.saveToDB(session, obj);
             }
         });
         return result[0];
@@ -72,17 +60,7 @@ public class MinistryAccountDAO implements IBaseDAO<MinistryAccount> {
         HibernateUtil.openSessionAndDoJob(new IDoJob() {
             @Override
             public void doJob(Session session) {
-                Transaction transaction = null;
-                try {
-                    transaction = session.beginTransaction();
-                    session.update(obj);
-                    transaction.commit();
-                } catch (HibernateException e) {
-                    assert transaction != null;
-                    transaction.rollback();
-                    System.err.println(e);
-                    result[0] = false;
-                }
+                result[0] = HibernateUtil.updateToDB(session, obj);
             }
         });
         return result[0];
@@ -94,25 +72,14 @@ public class MinistryAccountDAO implements IBaseDAO<MinistryAccount> {
         HibernateUtil.openSessionAndDoJob(new IDoJob() {
             @Override
             public void doJob(Session session) {
-                Transaction transaction = null;
-                try {
-                    // Get by id
-                    MinistryAccount account = getById(id);
-                    if (account == null) {
-                        result[0] = false;
-                        return;
-                    }
-
-                    // Delete
-                    transaction = session.beginTransaction();
-                    session.delete(account);
-                    transaction.commit();
-                } catch (HibernateException e) {
-                    assert transaction != null;
-                    transaction.rollback();
-                    System.err.println(e);
+                // Get by id
+                MinistryAccount account = getById(id);
+                if (account == null) {
                     result[0] = false;
+                    return;
                 }
+                // Delete
+                result[0] = HibernateUtil.deleteInDB(session, account);
             }
         });
         return result[0];

@@ -1,6 +1,7 @@
 package data.dao;
 
 import data.dao.base.IBaseDAO;
+import data.model.MinistryAccount;
 import data.model.Subject;
 import data.model.base.IDoJob;
 import org.hibernate.Session;
@@ -27,21 +28,60 @@ public class SubjectDAO implements IBaseDAO<Subject> {
 
     @Override
     public Subject getById(String id) {
-        return null;
+        final Subject[] subjects = {null};
+        HibernateUtil.openSessionAndDoJob(new IDoJob() {
+            @Override
+            public void doJob(Session session) {
+                subjects[0] = session.get(Subject.class, id);
+            }
+        });
+        return subjects[0];
     }
 
     @Override
     public boolean insert(Subject obj) {
-        return false;
+        final boolean[] result = {true};
+        HibernateUtil.openSessionAndDoJob(new IDoJob() {
+            @Override
+            public void doJob(Session session) {
+                if (getById(obj.getSubjectId()) != null) {
+                    result[0] = false;
+                    return;
+                }
+                result[0] = HibernateUtil.saveToDB(session, obj);
+            }
+        });
+        return result[0];
     }
 
     @Override
     public boolean update(Subject obj) {
-        return false;
+        final boolean[] result = {true};
+        HibernateUtil.openSessionAndDoJob(new IDoJob() {
+            @Override
+            public void doJob(Session session) {
+                result[0] = HibernateUtil.updateToDB(session, obj);
+            }
+        });
+        return result[0];
     }
 
     @Override
     public boolean delete(String id) {
-        return false;
+        final boolean[] result = {true};
+        HibernateUtil.openSessionAndDoJob(new IDoJob() {
+            @Override
+            public void doJob(Session session) {
+                // Get by id
+                Subject subject = getById(id);
+                if (subject == null) {
+                    result[0] = false;
+                    return;
+                }
+                // Delete
+                result[0] = HibernateUtil.deleteInDB(session, subject);
+            }
+        });
+        return result[0];
     }
 }
