@@ -16,7 +16,6 @@ public abstract class BaseTablePanel extends JPanel implements ActionListener, S
     protected final String addNewString = "Add New";
     protected final String deleteString = "Delete";
     protected final String updateString = "Update";
-    protected final String resetString = "Reset Password";
 
     protected JTextField tfSearch;
     protected JButton btnSearch;
@@ -54,7 +53,6 @@ public abstract class BaseTablePanel extends JPanel implements ActionListener, S
         String[] btnTexts = {
                 addNewString,
                 updateString,
-                resetString,
                 deleteString,
         };
         for (String text : btnTexts) {
@@ -156,5 +154,12 @@ public abstract class BaseTablePanel extends JPanel implements ActionListener, S
         // show edit frame
         editFrame.pack();
         editFrame.setVisible(true);
+    }
+
+    public void onSaved() {
+        // Close edit frame
+        editFrame.setVisible(false);
+        // Update UI
+        resetTableData();
     }
 }

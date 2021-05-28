@@ -1,13 +1,17 @@
-package view.base;
+package view.components.edit_panels;
 
 import data.dao.MinistryAccountDAO;
 import data.model.MinistryAccount;
+import utils.ColumnNameHelper;
 import utils.UIDecoratorUtil;
+import view.base.EditMode;
+import view.base.SaveEditingCallback;
 
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
+import static utils.UIDecoratorUtil.createEditRow;
 
 
 public class EditMinistryAccountPanel extends JPanel implements ActionListener {
@@ -36,13 +40,13 @@ public class EditMinistryAccountPanel extends JPanel implements ActionListener {
         tfPassword = new JTextField(30);
         // Create components
         if (oldAccount == null) {
-            editIdPanel = createEditRow(tfId, "Ministry ID", "");
-            editUsernamePanel = createEditRow(tfUsername, "Username", "");
-            editPasswordPanel = createEditRow(tfPassword, "Password", "");
+            editIdPanel = createEditRow(tfId, ColumnNameHelper.ministryAccount[0], "");
+            editUsernamePanel = createEditRow(tfUsername, ColumnNameHelper.ministryAccount[1], "");
+            editPasswordPanel = createEditRow(tfPassword, ColumnNameHelper.ministryAccount[2], "");
         } else {
-            editIdPanel = createEditRow(tfId, "Ministry ID", oldAccount.getMinistryId());
-            editUsernamePanel = createEditRow(tfUsername, "Username", oldAccount.getUsername());
-            editPasswordPanel = createEditRow(tfPassword, "Password", oldAccount.getPassword());
+            editIdPanel = createEditRow(tfId, ColumnNameHelper.ministryAccount[0], oldAccount.getMinistryId());
+            editUsernamePanel = createEditRow(tfUsername, ColumnNameHelper.ministryAccount[1], oldAccount.getUsername());
+            editPasswordPanel = createEditRow(tfPassword, ColumnNameHelper.ministryAccount[2], oldAccount.getPassword());
         }
 
         JButton btnSave = new JButton("Save");
@@ -58,26 +62,6 @@ public class EditMinistryAccountPanel extends JPanel implements ActionListener {
         add(btnSave);
 
         setBorder(UIDecoratorUtil.customBorder());
-    }
-
-    private JPanel createEditRow(JTextField tf, String labelText, String tfText) {
-        //
-        JPanel panel = new JPanel();
-        panel.setLayout(new FlowLayout());
-        //
-        JLabel label = new JLabel(labelText);
-        label.setFont(UIDecoratorUtil.customFont());
-        label.setBorder(UIDecoratorUtil.customBorder());
-
-        tf.setText(tfText);
-        tf.setFont(UIDecoratorUtil.customFont());
-        tf.setBorder(UIDecoratorUtil.customBorder());
-        //
-        panel.add(label);
-        panel.add(tf);
-        panel.setBorder(BorderFactory.createEmptyBorder(16, 16, 16, 16));
-
-        return panel;
     }
 
     @Override

@@ -3,17 +3,9 @@ package view.components;
 import data.dao.MinistryAccountDAO;
 import data.model.MinistryAccount;
 import utils.ColumnNameHelper;
-import utils.UIDecoratorUtil;
 import view.base.BaseTablePanel;
-import view.base.EditMinistryAccountPanel;
-import view.base.SaveEditingCallback;
+import view.components.edit_panels.EditMinistryAccountPanel;
 
-import javax.swing.*;
-import javax.swing.table.DefaultTableModel;
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.util.ArrayList;
 import java.util.List;
 
 public class MinistryAccountsPanel extends BaseTablePanel {
@@ -47,14 +39,6 @@ public class MinistryAccountsPanel extends BaseTablePanel {
     @Override
     protected void onSearch() {
 
-    }
-
-    @Override
-    public void onSaved() {
-        // Close edit frame
-        editFrame.setVisible(false);
-        // Update UI
-        resetTableData();
     }
 
     @Override

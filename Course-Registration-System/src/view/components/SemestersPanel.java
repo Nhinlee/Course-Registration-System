@@ -1,38 +1,41 @@
 package view.components;
 
-import data.dao.SubjectDAO;
+import data.dao.SemesterDAO;
+import data.model.Semester;
 import data.model.Subject;
 import utils.ColumnNameHelper;
 import view.base.BaseTablePanel;
+import view.components.edit_panels.EditSemesterPanel;
 import view.components.edit_panels.EditSubjectPanel;
 
 import java.util.List;
 
-public class SubjectsPanel extends BaseTablePanel {
+public class SemestersPanel extends BaseTablePanel {
 
-    private final SubjectDAO subjectDAO = new SubjectDAO();
+    // Data Access Object
+    private final SemesterDAO semesterDAO = new SemesterDAO();
 
-    public SubjectsPanel() {
+    public SemestersPanel() {
         this.init();
     }
 
     @Override
     protected void onAddNew() {
-        showEditPanel(new EditSubjectPanel(null, this));
+        showEditPanel(new EditSemesterPanel(null, this));
     }
 
     @Override
     protected void onDelete(String id) {
         // Update to DB
-        subjectDAO.delete(id);
+        semesterDAO.delete(id);
         // Update UI
         resetTableData();
     }
 
     @Override
     protected void onUpdate(String id) {
-        Subject subject = subjectDAO.getById(id);
-        showEditPanel(new EditSubjectPanel(subject, this));
+        Semester semester = semesterDAO.getById(id);
+        showEditPanel(new EditSemesterPanel(semester, this));
     }
 
     @Override
@@ -42,17 +45,17 @@ public class SubjectsPanel extends BaseTablePanel {
 
     @Override
     protected void resetTableData() {
-        List<Subject> subjects = subjectDAO.getAll();
+        List<Semester> semesters = semesterDAO.getAll();
         model.setRowCount(0);
         model.setColumnCount(0);
         // Add column name
-        for (String column : ColumnNameHelper.subject) {
+        for (String column : ColumnNameHelper.semester) {
             model.addColumn(column);
         }
 
         // Add data
-        for (Subject subject : subjects) {
-            model.addRow(subject.toRow());
+        for (Semester semester : semesters) {
+            model.addRow(semester.toRow());
         }
     }
 }

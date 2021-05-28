@@ -1,9 +1,11 @@
 package data.model;
 
+import data.model.base.BaseModel;
+
 import java.sql.Date;
 import java.util.Objects;
 
-public class Semester {
+public class Semester extends BaseModel {
     private String semesterId;
     private String semesterName;
     private String schoolYear;
@@ -74,5 +76,15 @@ public class Semester {
     @Override
     public int hashCode() {
         return Objects.hash(semesterId, semesterName, schoolYear, startDate, endDate);
+    }
+
+    @Override
+    public String getId() {
+        return semesterId;
+    }
+
+    @Override
+    public Object[] toRow() {
+        return new Object[]{semesterId, semesterName, schoolYear, startDate, endDate,};
     }
 }

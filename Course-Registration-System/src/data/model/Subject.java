@@ -1,10 +1,10 @@
 package data.model;
 
-import data.model.base.IBaseModel;
+import data.model.base.BaseModel;
 
 import java.util.Objects;
 
-public class Subject implements IBaseModel {
+public class Subject extends BaseModel {
     private String subjectId;
     private String subjectName;
     private short numberOfCredits;
@@ -44,6 +44,11 @@ public class Subject implements IBaseModel {
     @Override
     public int hashCode() {
         return Objects.hash(subjectId, subjectName, numberOfCredits);
+    }
+
+    @Override
+    public String getId() {
+        return subjectId;
     }
 
     @Override

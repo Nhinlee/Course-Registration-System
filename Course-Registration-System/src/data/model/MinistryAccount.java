@@ -1,12 +1,12 @@
 package data.model;
 
-import data.model.base.IBaseModel;
+import data.model.base.BaseModel;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class MinistryAccount implements IBaseModel {
+public class MinistryAccount extends BaseModel {
     private String ministryId;
     private String username;
     private String password;
@@ -55,6 +55,11 @@ public class MinistryAccount implements IBaseModel {
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
                 '}';
+    }
+
+    @Override
+    public String getId() {
+        return ministryId;
     }
 
     @Override
