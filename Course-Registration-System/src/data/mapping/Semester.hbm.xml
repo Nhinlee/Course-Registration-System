@@ -20,8 +20,8 @@
         <property name="endDate">
             <column name="end_date" sql-type="date"/>
         </property>
-        <!--<property name="isCurrent">
-            <column name="is_current" sql-type="boolean" not-null="true"/>
-        </property>-->
+        <property name="isCurrent">
+            <column name="is_current" sql-type="smallint"/>
+        </property>
     </class>
 </hibernate-mapping>

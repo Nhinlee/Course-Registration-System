@@ -6,12 +6,15 @@ import java.sql.Date;
 import java.util.Objects;
 
 public class Semester extends BaseModel {
+    public static final short IS_CURRENT = 1;
+    public static final short IS_NOT_CURRENT = 0;
+
     private String semesterId;
     private String semesterName;
     private String schoolYear;
     private Date startDate;
     private Date endDate;
-    //private Boolean isCurrent;
+    private short isCurrent;
 
     public String getSemesterId() {
         return semesterId;
@@ -53,29 +56,25 @@ public class Semester extends BaseModel {
         this.endDate = endDate;
     }
 
-    /*public Boolean getCurrent() {
+    public short getIsCurrent() {
         return isCurrent;
     }
 
-    public void setCurrent(Boolean current) {
-        isCurrent = current;
-    }*/
+    public void setIsCurrent(short isCurrent) {
+        this.isCurrent = isCurrent;
+    }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Semester semester = (Semester) o;
-        return Objects.equals(semesterId, semester.semesterId)
-                && Objects.equals(semesterName, semester.semesterName)
-                && Objects.equals(schoolYear, semester.schoolYear)
-                && Objects.equals(startDate, semester.startDate)
-                && Objects.equals(endDate, semester.endDate);
+        return isCurrent == semester.isCurrent && Objects.equals(semesterId, semester.semesterId) && Objects.equals(semesterName, semester.semesterName) && Objects.equals(schoolYear, semester.schoolYear) && Objects.equals(startDate, semester.startDate) && Objects.equals(endDate, semester.endDate);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(semesterId, semesterName, schoolYear, startDate, endDate);
+        return Objects.hash(semesterId, semesterName, schoolYear, startDate, endDate, isCurrent);
     }
 
     @Override
@@ -85,6 +84,6 @@ public class Semester extends BaseModel {
 
     @Override
     public Object[] toRow() {
-        return new Object[]{semesterId, semesterName, schoolYear, startDate, endDate,};
+        return new Object[]{semesterId, semesterName, schoolYear, startDate, endDate, isCurrent,};
     }
 }

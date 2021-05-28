@@ -2,6 +2,8 @@ package data.dao;
 
 import data.dao.base.BaseDAO;
 import data.model.Semester;
+import org.hibernate.HibernateException;
+import org.hibernate.Session;
 import org.hibernate.query.Query;
 import utils.HibernateUtil;
 
@@ -27,5 +29,32 @@ public class SemesterDAO extends BaseDAO<Semester> {
                 session -> semesters[0] = session.get(Semester.class, id)
         );
         return semesters[0];
+    }
+
+    @Override
+    public boolean update(Semester obj) {
+        final boolean[] result = {true};
+        HibernateUtil.openSessionAndDoJob(
+                session -> {
+                    if (obj.getIsCurrent() == Semester.IS_CURRENT) {
+                        // update old semester
+                        Semester currentSemester = getCurrentSemester(session);
+                        currentSemester.setIsCurrent(Semester.IS_NOT_CURRENT);
+                        HibernateUtil.updateToDB(session, currentSemester);
+                    }
+                    result[0] = HibernateUtil.updateToDB(session, obj);
+                }
+        );
+        return result[0];
+    }
+
+    private Semester getCurrentSemester(Session session) throws HibernateException {
+        Semester currentSemester = null;
+
+        String hql = "select s from Semester s where isCurrent = 1";
+        Query query = session.createQuery(hql);
+        currentSemester = (Semester) query.list().get(0);
+
+        return currentSemester;
     }
 }

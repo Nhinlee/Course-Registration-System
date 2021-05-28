@@ -792,7 +792,7 @@ false YEKT
 false Z
 false Zulu
 </TimeZones>
-      <StartupTime>1622087879</StartupTime>
+      <StartupTime>1622162585</StartupTime>
     </root>
     <database id="2" parent="1" name="academy">
       <ObjectId>16467</ObjectId>
@@ -811,7 +811,7 @@ false Zulu
 13158||-9223372036854775808|U|G
 13158||10|U|G</Grants>
       <Owner>nhinlee</Owner>
-      <IntrospectionStateNumber>565</IntrospectionStateNumber>
+      <IntrospectionStateNumber>629</IntrospectionStateNumber>
       <Current>1</Current>
     </database>
     <database id="4" parent="1" name="postgres">
@@ -889,7 +889,7 @@ false Zulu
       <Comment>standard public schema</Comment>
       <StateNumber>287</StateNumber>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>566</IntrospectionStateNumber>
+      <IntrospectionStateNumber>630</IntrospectionStateNumber>
       <Current>1</Current>
     </schema>
     <extension id="20" parent="3" name="plpgsql">
@@ -1017,7 +1017,7 @@ false Zulu
     <table id="37" parent="19" name="semester">
       <ObjectId>16944</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>562</StateNumber>
+      <StateNumber>627</StateNumber>
     </table>
     <table id="38" parent="19" name="student">
       <ObjectId>16928</ObjectId>
@@ -1356,10 +1356,11 @@ false Zulu
       <TypeId>1082</TypeId>
     </column>
     <column id="82" parent="37" name="is_current">
-      <Position>6</Position>
-      <DataType>boolean|0s</DataType>
-      <StateNumber>562</StateNumber>
-      <TypeId>16</TypeId>
+      <Position>8</Position>
+      <DataType>smallint|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>627</StateNumber>
+      <TypeId>21</TypeId>
     </column>
     <index id="83" parent="37" name="semester_pkey">
       <ObjectId>16947</ObjectId>
