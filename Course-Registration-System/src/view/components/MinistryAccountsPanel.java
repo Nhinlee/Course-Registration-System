@@ -66,7 +66,6 @@ public class MinistryAccountsPanel extends BaseTablePanel {
         for (String column : ColumnNameHelper.ministryAccount) {
             model.addColumn(column);
         }
-
         // Add data
         for (MinistryAccount account : accounts) {
             model.addRow(account.toRow());

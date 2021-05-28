@@ -8,7 +8,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/data/dao/MinistryAccountDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/dao/MinistryAccountDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/data/dao/SubjectDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/dao/SubjectDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/HibernateUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/HibernateUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/components/MinistryAccountsPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/components/MinistryAccountsPanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -169,7 +169,7 @@
       <updated>1622089126808</updated>
       <workItem from="1622089128398" duration="2198000" />
       <workItem from="1622093181235" duration="23481000" />
-      <workItem from="1622163256921" duration="5383000" />
+      <workItem from="1622163256921" duration="5688000" />
     </task>
     <servers />
   </component>
