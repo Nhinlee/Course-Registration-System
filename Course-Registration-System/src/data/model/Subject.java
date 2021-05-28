@@ -1,8 +1,10 @@
 package data.model;
 
+import data.model.base.IBaseModel;
+
 import java.util.Objects;
 
-public class Subject {
+public class Subject implements IBaseModel {
     private String subjectId;
     private String subjectName;
     private short numberOfCredits;
@@ -42,5 +44,10 @@ public class Subject {
     @Override
     public int hashCode() {
         return Objects.hash(subjectId, subjectName, numberOfCredits);
+    }
+
+    @Override
+    public Object[] toRow() {
+        return new Object[]{subjectId, subjectName, numberOfCredits,};
     }
 }

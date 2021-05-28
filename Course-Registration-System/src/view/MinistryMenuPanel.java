@@ -1,6 +1,7 @@
 package view;
 
 import view.components.MinistryAccountsPanel;
+import view.components.SubjectsPanel;
 
 import javax.swing.*;
 import java.awt.*;
@@ -62,6 +63,8 @@ public class MinistryMenuPanel extends JPanel implements ActionListener {
         String command = e.getActionCommand();
         if (command.equals(btnTexts[0])) {
             showFeatureFrame(new MinistryAccountsPanel());
+        } else if (command.equals(btnTexts[1])) {
+            showFeatureFrame(new SubjectsPanel());
         }
     }
 }

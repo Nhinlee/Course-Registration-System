@@ -1,0 +1,24 @@
+INSERT INTO public.subject(
+	subject_id, subject_name, number_of_credits)
+	VALUES 
+	('subject_001', 'Nhập Môn Lập Trình', 4),
+	('subject_002', 'Mạng Máy Tính', 4),
+	('subject_003', 'Hệ Điều Hành', 4),
+	('subject_004', 'Tư Tưởng Hồ Chí Minh', 2),
+	('subject_005', 'Luận Sáng Tạo', 2),
+	('subject_006', 'Vật Lí 1', 3),
+	('subject_007', 'Vật Lí 2', 3),
+	('subject_008', 'Vi Tích Phân 1B', 3),
+	('subject_009', 'Vi Tích Phân 2B', 3),
+	('subject_010', 'Lập Trình Hướng Đối Tượng', 4),
+	('subject_011', 'Mẫu Thiết Kế Hướng Đối Tượng', 4),
+	('subject_012', 'Kiến Trúc Phần Mềm', 4),
+	('subject_013', 'Cơ Sở Dữ Liệu', 4),
+	('subject_014', 'Nhập Môn Kĩ Thuật Phần Mềm', 4),
+	('subject_015', 'Thiết Kế Phần Mềm', 4),
+	('subject_016', 'Lập Trình Ứng Dụng Java', 4),
+	('subject_017', 'Thiết Kế Giao Diện', 4),
+	('subject_018', 'Phát Triển Ứng Dụng Web', 4),
+	('subject_019', 'Phát Triển Game', 4),
+	('subject_020', 'Web Nâng Cao', 4)	
+	;
