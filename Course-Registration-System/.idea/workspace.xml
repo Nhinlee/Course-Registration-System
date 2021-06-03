@@ -5,22 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f16ff818-d8f3-480d-90ea-b529634ec9fa" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/data/dao/ClazzDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/dao/StudentDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/view/components/ClazzPanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/view/components/StudentsPanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/view/components/edit_panels/EditClazzPanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/view/components/edit_panels/EditStudentPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/dao/CourseRegistrationSessionDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/view/components/CourseRegistrationSessionsPanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/view/components/edit_panels/EditCourseRegistrationSessionPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/dao/MinistryAccountDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/dao/MinistryAccountDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/model/Clazz.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/model/Clazz.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/model/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/model/Student.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/model/base/IDoJob.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/IDoJob.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/dao/SemesterDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/dao/SemesterDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/model/CourseRegistrationSession.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/model/CourseRegistrationSession.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils/ColumnNameHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/ColumnNameHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/HibernateUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/HibernateUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/MinistryMenuPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/MinistryMenuPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/components/SemestersPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/components/SemestersPanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -187,7 +179,7 @@
       <workItem from="1622190373790" duration="6675000" />
       <workItem from="1622217852119" duration="1027000" />
       <workItem from="1622720838828" duration="1405000" />
-      <workItem from="1622722592047" duration="7739000" />
+      <workItem from="1622722592047" duration="10456000" />
     </task>
     <servers />
   </component>

@@ -48,6 +48,14 @@ public class SemesterDAO extends BaseDAO<Semester> {
         return result[0];
     }
 
+    public Semester getCurrentSemester() {
+        final Semester[] semesters = {null};
+        HibernateUtil.openSessionAndDoJob(session -> {
+            semesters[0] = getCurrentSemester(session);
+        });
+        return semesters[0];
+    }
+
     private Semester getCurrentSemester(Session session) throws HibernateException {
         Semester currentSemester = null;
 
