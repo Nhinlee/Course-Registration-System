@@ -1,6 +1,5 @@
 package utils;
 
-import data.model.base.IDoJob;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;

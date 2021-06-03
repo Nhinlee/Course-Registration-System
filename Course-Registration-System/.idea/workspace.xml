@@ -5,27 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f16ff818-d8f3-480d-90ea-b529634ec9fa" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9c5b7cb4-0bca-45f3-b224-35ada742a0de.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/9c5b7cb4-0bca-45f3-b224-35ada742a0de.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9c5b7cb4-0bca-45f3-b224-35ada742a0de/storage_v2/_src_/database/course-registration-db.YDB5nQ/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/9c5b7cb4-0bca-45f3-b224-35ada742a0de/storage_v2/_src_/database/course-registration-db.YDB5nQ/schema/public.abK9xQ.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/jdatepicker_1_3_4.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/dao/ClazzDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/dao/StudentDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/view/components/ClazzPanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/view/components/StudentsPanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/view/components/edit_panels/EditClazzPanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/view/components/edit_panels/EditStudentPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Course-Registration-System.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Course-Registration-System.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Course-Registration-System/data/mapping/Clazz.hbm.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Course-Registration-System/data/mapping/Course.hbm.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Course-Registration-System/data/mapping/CourseRegistrationSession.hbm.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Course-Registration-System/data/mapping/MinistryAccount.hbm.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Course-Registration-System/data/mapping/Registration.hbm.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Course-Registration-System/data/mapping/Semester.hbm.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Course-Registration-System/data/mapping/Student.hbm.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Course-Registration-System/data/mapping/Subject.hbm.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Course-Registration-System/hibernate.cfg.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/dao/SemesterDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/dao/SemesterDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/mapping/Semester.hbm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/mapping/Semester.hbm.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/model/Semester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/model/Semester.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/dao/MinistryAccountDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/dao/MinistryAccountDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/model/Clazz.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/model/Clazz.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/model/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/model/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/model/base/IDoJob.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/IDoJob.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils/ColumnNameHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/ColumnNameHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/components/edit_panels/EditSemesterPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/components/edit_panels/EditSemesterPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../db/course-registration-db-project.pgerd" beforeDir="false" afterPath="$PROJECT_DIR$/../db/course-registration-db-project.pgerd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../db/semester_sql" beforeDir="false" afterPath="$PROJECT_DIR$/../db/semester_sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/HibernateUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/HibernateUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/MinistryMenuPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/MinistryMenuPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/components/SemestersPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/components/SemestersPanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,7 +121,8 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/postgresql-42.2.19.jar" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Hello Swing" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.1711111" />
     <property name="project.structure.side.proportion" value="0.30810812" />
@@ -160,15 +156,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -190,7 +184,10 @@
       <workItem from="1622089128398" duration="2198000" />
       <workItem from="1622093181235" duration="23481000" />
       <workItem from="1622163256921" duration="13981000" />
-      <workItem from="1622190373790" duration="3777000" />
+      <workItem from="1622190373790" duration="6675000" />
+      <workItem from="1622217852119" duration="1027000" />
+      <workItem from="1622720838828" duration="1405000" />
+      <workItem from="1622722592047" duration="7739000" />
     </task>
     <servers />
   </component>

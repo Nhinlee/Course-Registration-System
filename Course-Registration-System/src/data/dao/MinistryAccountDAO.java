@@ -1,7 +1,6 @@
 package data.dao;
 
 import data.dao.base.BaseDAO;
-import data.dao.base.IBaseDAO;
 import data.model.MinistryAccount;
 import org.hibernate.query.Query;
 import utils.HibernateUtil;

@@ -1,8 +1,7 @@
 package view;
 
-import view.components.MinistryAccountsPanel;
-import view.components.SemestersPanel;
-import view.components.SubjectsPanel;
+import data.model.Student;
+import view.components.*;
 
 import javax.swing.*;
 import java.awt.*;
@@ -68,6 +67,10 @@ public class MinistryMenuPanel extends JPanel implements ActionListener {
             showFeatureFrame(new SubjectsPanel());
         } else if (command.equals(btnTexts[2])) {
             showFeatureFrame(new SemestersPanel());
+        } else if (command.equals(btnTexts[3])) {
+            showFeatureFrame(new ClazzPanel());
+        } else if (command.equals(btnTexts[4])) {
+            showFeatureFrame(new StudentsPanel());
         }
     }
 }

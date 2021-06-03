@@ -2,11 +2,9 @@ package view.components;
 
 import data.dao.SemesterDAO;
 import data.model.Semester;
-import data.model.Subject;
 import utils.ColumnNameHelper;
 import view.base.BaseTablePanel;
 import view.components.edit_panels.EditSemesterPanel;
-import view.components.edit_panels.EditSubjectPanel;
 
 import java.util.List;
 

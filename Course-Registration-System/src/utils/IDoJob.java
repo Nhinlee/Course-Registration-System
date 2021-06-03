@@ -1,4 +1,4 @@
-package data.model.base;
+package utils;
 
 import org.hibernate.Session;
 
