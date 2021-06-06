@@ -2,9 +2,14 @@
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import utils.HibernateUtil;
+import utils.RandomUtils;
 import view.MinistryMenuPanel;
+import view.components.student.RegisterCoursePanel;
 
 import javax.swing.*;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
+import java.util.Random;
 
 public class Main {
 
@@ -15,7 +20,7 @@ public class Main {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         // Set content pane for the window
-        JPanel panel = new MinistryMenuPanel();
+        JPanel panel = new RegisterCoursePanel();
         panel.setOpaque(true);
         frame.setContentPane(panel);
 
@@ -35,6 +40,5 @@ public class Main {
         } catch (HibernateException e) {
             System.err.println(e);
         }
-
     }
 }

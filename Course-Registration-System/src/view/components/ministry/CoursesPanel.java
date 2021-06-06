@@ -1,13 +1,10 @@
-package view.components;
+package view.components.ministry;
 
 import data.dao.CourseDAO;
-import data.model.Clazz;
 import data.model.Course;
-import data.model.CourseRegistrationSession;
 import utils.ColumnNameHelper;
 import view.base.BaseTablePanel;
-import view.components.edit_panels.EditCoursePanel;
-import view.components.edit_panels.EditCourseRegistrationSessionPanel;
+import view.components.ministry.edit_panels.EditCoursePanel;
 
 import java.util.List;
 

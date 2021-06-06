@@ -1,7 +1,6 @@
-package view.components.edit_panels;
+package view.components.ministry.edit_panels;
 
 import data.dao.CourseDAO;
-import data.dao.MinistryAccountDAO;
 import data.dao.SemesterDAO;
 import data.dao.SubjectDAO;
 import data.model.Course;

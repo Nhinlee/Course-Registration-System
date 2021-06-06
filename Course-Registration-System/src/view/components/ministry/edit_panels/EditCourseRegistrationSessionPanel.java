@@ -1,4 +1,4 @@
-package view.components.edit_panels;
+package view.components.ministry.edit_panels;
 
 import data.dao.CourseRegistrationSessionDAO;
 import data.dao.SemesterDAO;

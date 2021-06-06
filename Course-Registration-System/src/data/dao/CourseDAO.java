@@ -2,6 +2,7 @@ package data.dao;
 
 import data.dao.base.BaseDAO;
 import data.model.Course;
+import data.model.Registration;
 import data.model.Semester;
 import org.hibernate.query.Query;
 import utils.HibernateUtil;
@@ -39,11 +40,34 @@ public class CourseDAO extends BaseDAO<Course> {
         //
         final List<Course> courses = new ArrayList<>();
         HibernateUtil.openSessionAndDoJob(session -> {
-
             String getAllHQL = String.format("select c from Course c where c.semester.semesterId = '%s'", currentSemester.getSemesterId());
             Query query = session.createQuery(getAllHQL);
             courses.addAll(query.list());
         });
         return courses;
     }
+
+    public List<Course> getAllCourseRemainByStudentId(String studentId) {
+        List<Course> rs = new ArrayList<>();
+        //
+        final RegistrationDAO registrationDAO = new RegistrationDAO();
+        final List<Registration> registrations = registrationDAO.getAllCourseRegisteredByStudentId(studentId);
+        //
+        final List<Course> courses = getAllCourseOfCurrentSemester();
+        for (Course course : courses) {
+            boolean isRegistered = false;
+            for (Registration res : registrations) {
+                if (res.getCourseId().equals(course.getCourseId())) {
+                    isRegistered = true;
+                    break;
+                }
+            }
+            if (!isRegistered) {
+                rs.add(course);
+            }
+        }
+        //
+        return rs;
+    }
+
 }

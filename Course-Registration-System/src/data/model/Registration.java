@@ -1,8 +1,10 @@
 package data.model;
 
+import data.model.base.BaseModel;
+
 import java.util.Objects;
 
-public class Registration {
+public class Registration extends BaseModel {
     private String registrationId;
     private String courseId;
     private String studentId;
@@ -42,5 +44,15 @@ public class Registration {
     @Override
     public int hashCode() {
         return Objects.hash(registrationId, courseId, studentId);
+    }
+
+    @Override
+    public String getId() {
+        return registrationId;
+    }
+
+    @Override
+    public Object[] toRow() {
+        return new Object[]{courseId, studentId};
     }
 }

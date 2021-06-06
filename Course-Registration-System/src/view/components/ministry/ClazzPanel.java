@@ -1,10 +1,10 @@
-package view.components;
+package view.components.ministry;
 
 import data.dao.ClazzDAO;
 import data.model.Clazz;
 import utils.ColumnNameHelper;
 import view.base.BaseTablePanel;
-import view.components.edit_panels.EditClazzPanel;
+import view.components.ministry.edit_panels.EditClazzPanel;
 
 import java.util.List;
 

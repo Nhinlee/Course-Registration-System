@@ -18,4 +18,5 @@ public class ColumnNameHelper {
             "Part Of Day",
             "Semester",
     };
+    public static final String[] courseStudentView = new String[]{"Course ID", "Course Name", "Max Slot", "Day Of Week", "Part Of Day",};
 }

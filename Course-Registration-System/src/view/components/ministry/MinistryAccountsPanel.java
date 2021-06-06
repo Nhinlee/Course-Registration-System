@@ -1,10 +1,10 @@
-package view.components;
+package view.components.ministry;
 
 import data.dao.MinistryAccountDAO;
 import data.model.MinistryAccount;
 import utils.ColumnNameHelper;
 import view.base.BaseTablePanel;
-import view.components.edit_panels.EditMinistryAccountPanel;
+import view.components.ministry.edit_panels.EditMinistryAccountPanel;
 
 import java.util.List;
 

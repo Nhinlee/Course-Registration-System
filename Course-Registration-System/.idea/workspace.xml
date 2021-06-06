@@ -5,25 +5,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f16ff818-d8f3-480d-90ea-b529634ec9fa" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/data/dao/CourseDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/view/components/CoursesPanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/view/components/edit_panels/EditCoursePanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/dao/RegistrationDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/RandomUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/view/components/student/RegisterCoursePanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Course-Registration-System/data/mapping/Course.hbm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Course-Registration-System/data/mapping/Course.hbm.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/mapping/Course.hbm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/mapping/Course.hbm.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/dao/CourseDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/dao/CourseDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/data/model/Course.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/model/Course.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/model/Semester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/model/Semester.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/model/Subject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/model/Subject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/model/Registration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/model/Registration.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils/ColumnNameHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/ColumnNameHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/UIDecoratorUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/UIDecoratorUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/MinistryMenuPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/MinistryMenuPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/components/ClazzPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/components/ClazzPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/components/edit_panels/EditClazzPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/components/edit_panels/EditClazzPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/components/edit_panels/EditCourseRegistrationSessionPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/components/edit_panels/EditCourseRegistrationSessionPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/components/edit_panels/EditMinistryAccountPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/components/edit_panels/EditMinistryAccountPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/components/edit_panels/EditSemesterPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/components/edit_panels/EditSemesterPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/components/edit_panels/EditStudentPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/components/edit_panels/EditStudentPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/components/edit_panels/EditSubjectPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/components/edit_panels/EditSubjectPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/base/BaseTablePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/base/BaseTablePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/components/ClazzPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/components/ministry/ClazzPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/components/CourseRegistrationSessionsPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/components/ministry/CourseRegistrationSessionsPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/components/CoursesPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/components/ministry/CoursesPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/components/MinistryAccountsPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/components/ministry/MinistryAccountsPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/components/SemestersPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/components/ministry/SemestersPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/components/StudentsPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/components/ministry/StudentsPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/components/SubjectsPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/components/ministry/SubjectsPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/components/edit_panels/EditClazzPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/components/ministry/edit_panels/EditClazzPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/components/edit_panels/EditCoursePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/components/ministry/edit_panels/EditCoursePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/components/edit_panels/EditCourseRegistrationSessionPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/components/ministry/edit_panels/EditCourseRegistrationSessionPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/components/edit_panels/EditMinistryAccountPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/components/ministry/edit_panels/EditMinistryAccountPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/components/edit_panels/EditSemesterPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/components/ministry/edit_panels/EditSemesterPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/components/edit_panels/EditStudentPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/components/ministry/edit_panels/EditStudentPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/components/edit_panels/EditSubjectPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/components/ministry/edit_panels/EditSubjectPanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -192,7 +198,7 @@
       <workItem from="1622720838828" duration="1405000" />
       <workItem from="1622722592047" duration="11094000" />
       <workItem from="1622956486395" duration="12000" />
-      <workItem from="1622972487852" duration="8617000" />
+      <workItem from="1622972487852" duration="15314000" />
     </task>
     <servers />
   </component>

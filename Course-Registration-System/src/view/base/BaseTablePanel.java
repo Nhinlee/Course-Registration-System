@@ -12,7 +12,6 @@ import java.util.List;
 
 public abstract class BaseTablePanel extends JPanel implements ActionListener, SaveEditingCallback {
     protected final String searchString = "Search";
-
     protected final String addNewString = "Add New";
     protected final String deleteString = "Delete";
     protected final String updateString = "Update";

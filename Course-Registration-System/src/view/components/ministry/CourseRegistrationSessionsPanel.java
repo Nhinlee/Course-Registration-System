@@ -1,10 +1,10 @@
-package view.components;
+package view.components.ministry;
 
 import data.dao.CourseRegistrationSessionDAO;
 import data.model.CourseRegistrationSession;
 import utils.ColumnNameHelper;
 import view.base.BaseTablePanel;
-import view.components.edit_panels.EditCourseRegistrationSessionPanel;
+import view.components.ministry.edit_panels.EditCourseRegistrationSessionPanel;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package view.components;
+package view.components.ministry;
 
 import data.dao.ClazzDAO;
 import data.dao.StudentDAO;
@@ -6,7 +6,7 @@ import data.model.Student;
 import utils.ColumnNameHelper;
 import utils.UIDecoratorUtil;
 import view.base.BaseTablePanel;
-import view.components.edit_panels.EditStudentPanel;
+import view.components.ministry.edit_panels.EditStudentPanel;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;

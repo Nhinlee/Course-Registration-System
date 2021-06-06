@@ -1,7 +1,6 @@
 package view;
 
-import data.model.Student;
-import view.components.*;
+import view.components.ministry.*;
 
 import javax.swing.*;
 import java.awt.*;

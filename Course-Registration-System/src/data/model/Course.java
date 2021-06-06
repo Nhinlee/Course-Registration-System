@@ -134,4 +134,14 @@ public class Course extends BaseModel {
                 semester.getSemesterName() + " - " + semester.getSchoolYear(),
         };
     }
+
+    public Object[] toStudentViewRow() {
+        return new Object[]{
+                courseId,
+                courseName,
+                maxSlot,
+                dayOfWeek,
+                partOfDay,
+        };
+    }
 }

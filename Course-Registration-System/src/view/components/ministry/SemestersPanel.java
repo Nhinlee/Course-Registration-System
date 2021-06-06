@@ -1,10 +1,10 @@
-package view.components;
+package view.components.ministry;
 
 import data.dao.SemesterDAO;
 import data.model.Semester;
 import utils.ColumnNameHelper;
 import view.base.BaseTablePanel;
-import view.components.edit_panels.EditSemesterPanel;
+import view.components.ministry.edit_panels.EditSemesterPanel;
 
 import java.util.List;
 
