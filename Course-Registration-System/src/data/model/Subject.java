@@ -47,6 +47,15 @@ public class Subject extends BaseModel {
     }
 
     @Override
+    public String toString() {
+        return "Subject{" +
+                "subjectId='" + subjectId + '\'' +
+                ", subjectName='" + subjectName + '\'' +
+                ", numberOfCredits=" + numberOfCredits +
+                '}';
+    }
+
+    @Override
     public String getId() {
         return subjectId;
     }

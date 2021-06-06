@@ -1,17 +1,19 @@
 package data.model;
 
+import data.model.base.BaseModel;
+
 import java.util.Objects;
 
-public class Course {
+public class Course extends BaseModel {
     private String courseId;
     private String courseName;
-    private String subjectId;
+    private Subject subject;
     private String lecturersFullName;
     private short maxSlot;
     private String roomName;
     private Short dayOfWeek;
     private Short partOfDay;
-    private String semesterId;
+    private Semester semester;
 
     public String getCourseId() {
         return courseId;
@@ -29,12 +31,12 @@ public class Course {
         this.courseName = courseName;
     }
 
-    public String getSubjectId() {
-        return subjectId;
+    public Subject getSubject() {
+        return subject;
     }
 
-    public void setSubjectId(String subjectId) {
-        this.subjectId = subjectId;
+    public void setSubject(Subject subject) {
+        this.subject = subject;
     }
 
     public String getLecturersFullName() {
@@ -77,12 +79,12 @@ public class Course {
         this.partOfDay = partOfDay;
     }
 
-    public String getSemesterId() {
-        return semesterId;
+    public Semester getSemester() {
+        return semester;
     }
 
-    public void setSemesterId(String semesterId) {
-        this.semesterId = semesterId;
+    public void setSemester(Semester semester) {
+        this.semester = semester;
     }
 
     @Override
@@ -90,11 +92,46 @@ public class Course {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Course course = (Course) o;
-        return maxSlot == course.maxSlot && Objects.equals(courseId, course.courseId) && Objects.equals(courseName, course.courseName) && Objects.equals(subjectId, course.subjectId) && Objects.equals(lecturersFullName, course.lecturersFullName) && Objects.equals(roomName, course.roomName) && Objects.equals(dayOfWeek, course.dayOfWeek) && Objects.equals(partOfDay, course.partOfDay) && Objects.equals(semesterId, course.semesterId);
+        return maxSlot == course.maxSlot && Objects.equals(courseId, course.courseId) && Objects.equals(courseName, course.courseName) && Objects.equals(subject, course.subject) && Objects.equals(lecturersFullName, course.lecturersFullName) && Objects.equals(roomName, course.roomName) && Objects.equals(dayOfWeek, course.dayOfWeek) && Objects.equals(partOfDay, course.partOfDay) && Objects.equals(semester, course.semester);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(courseId, courseName, subjectId, lecturersFullName, maxSlot, roomName, dayOfWeek, partOfDay, semesterId);
+        return Objects.hash(courseId, courseName, subject, lecturersFullName, maxSlot, roomName, dayOfWeek, partOfDay, semester);
+    }
+
+    @Override
+    public String toString() {
+        return "Course{" +
+                "courseId='" + courseId + '\'' +
+                ", courseName='" + courseName + '\'' +
+                ", subjectId='" + subject + '\'' +
+                ", lecturersFullName='" + lecturersFullName + '\'' +
+                ", maxSlot=" + maxSlot +
+                ", roomName='" + roomName + '\'' +
+                ", dayOfWeek=" + dayOfWeek +
+                ", partOfDay=" + partOfDay +
+                ", semester=" + semester +
+                '}';
+    }
+
+    @Override
+    public String getId() {
+        return courseId;
+    }
+
+    @Override
+    public Object[] toRow() {
+        return new Object[]{
+                courseId,
+                courseName,
+                subject.getSubjectName(),
+                lecturersFullName,
+                maxSlot,
+                roomName,
+                dayOfWeek,
+                partOfDay,
+                semester.getSemesterName() + " - " + semester.getSchoolYear(),
+        };
     }
 }

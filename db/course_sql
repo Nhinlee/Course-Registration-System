@@ -1,0 +1,6 @@
+INSERT INTO public.course(
+	course_id, course_name, subject_id, lecturers_full_name, max_slot, room_name, day_of_week, part_of_day, semester_id)
+	VALUES 
+	('course_001', 'Nhập Môn Lập Trình 1', 'subject_001', 'Nguyễn Văn A', 5, 'E01', 2, 1, 'semester_002'),
+	('course_002', 'Nhập Môn Lập Trình 2', 'subject_001', 'Nguyễn Văn B', 5, 'E02', 2, 2, 'semester_002')
+	;

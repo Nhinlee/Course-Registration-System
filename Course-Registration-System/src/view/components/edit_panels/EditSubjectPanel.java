@@ -29,7 +29,7 @@ public class EditSubjectPanel extends JPanel implements ActionListener {
         saveEditingCallback = callback;
 
         // Set layout
-        setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
+        setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 
         JPanel editIdPanel;
         JPanel editUsernamePanel;

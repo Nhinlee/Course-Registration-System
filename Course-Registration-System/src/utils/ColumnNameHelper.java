@@ -7,4 +7,15 @@ public class ColumnNameHelper {
     public static final String[] clazz = new String[]{"Class ID", "Number Of Male Students", "Number Of Female Students"};
     public static final String[] student = new String[]{"Student ID", "Username", "Password", "Full Name", "Birthday", "Address", "Class ID"};
     public static final String[] courseRegisSession = new String[]{"Session ID", "Start Date", "End Date", "Semester ID"};
+    public static final String[] course = new String[]{
+            "Course ID",
+            "Course Name",
+            "Subject",
+            "Lecturers Name",
+            "Max Slot",
+            "Room Name",
+            "Day Of Week",
+            "Part Of Day",
+            "Semester",
+    };
 }

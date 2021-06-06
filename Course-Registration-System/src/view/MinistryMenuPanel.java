@@ -71,8 +71,10 @@ public class MinistryMenuPanel extends JPanel implements ActionListener {
             showFeatureFrame(new ClazzPanel());
         } else if (command.equals(btnTexts[4])) {
             showFeatureFrame(new StudentsPanel());
-        } else if(command.equals(btnTexts[5])){
+        } else if (command.equals(btnTexts[5])) {
             showFeatureFrame(new CourseRegistrationSessionsPanel());
+        } else if (command.equals(btnTexts[6])) {
+            showFeatureFrame(new CoursesPanel());
         }
     }
 }

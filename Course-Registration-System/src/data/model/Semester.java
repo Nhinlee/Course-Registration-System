@@ -78,6 +78,18 @@ public class Semester extends BaseModel {
     }
 
     @Override
+    public String toString() {
+        return "Semester{" +
+                "semesterId='" + semesterId + '\'' +
+                ", semesterName='" + semesterName + '\'' +
+                ", schoolYear='" + schoolYear + '\'' +
+                ", startDate=" + startDate +
+                ", endDate=" + endDate +
+                ", isCurrent=" + isCurrent +
+                '}';
+    }
+
+    @Override
     public String getId() {
         return semesterId;
     }

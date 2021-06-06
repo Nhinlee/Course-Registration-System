@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <!DOCTYPE hibernate-mapping PUBLIC
-    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 
     <class name="data.model.Course" table="course" schema="public" catalog="course-registration-db">
@@ -10,9 +10,6 @@
         </id>
         <property name="courseName">
             <column name="course_name" sql-type="text"/>
-        </property>
-        <property name="subjectId">
-            <column name="subject_id" sql-type="varchar(45)" length="45"/>
         </property>
         <property name="lecturersFullName">
             <column name="lecturers_full_name" sql-type="text"/>
@@ -29,8 +26,13 @@
         <property name="partOfDay">
             <column name="part_of_day" sql-type="smallint" not-null="true"/>
         </property>
-        <property name="semesterId">
-            <column name="semester_id" sql-type="varchar(45)" length="45"/>
-        </property>
+
+        <many-to-one name="semester" class="data.model.Semester" fetch="select" lazy="false">
+            <column name="semester_id" length="45" not-null="true"/>
+        </many-to-one>
+
+        <many-to-one name="subject" class="data.model.Subject" fetch="select" lazy="false">
+            <column name="subject_id" length="45" not-null="true"/>
+        </many-to-one>
     </class>
 </hibernate-mapping>

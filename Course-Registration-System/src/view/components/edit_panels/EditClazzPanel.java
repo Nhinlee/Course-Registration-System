@@ -26,7 +26,7 @@ public class EditClazzPanel extends JPanel implements ActionListener {
         editMode = oldClazz == null ? EditMode.addNew : EditMode.update;
         saveEditingCallback = callback;
         // Set layout
-        setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
+        setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 
         JPanel editIdPanel;
         tfId = new JTextField(30);

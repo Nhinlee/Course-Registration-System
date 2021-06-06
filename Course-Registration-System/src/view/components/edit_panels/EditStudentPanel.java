@@ -34,7 +34,7 @@ public class EditStudentPanel extends JPanel implements ActionListener {
         editMode = oldStudent == null ? EditMode.addNew : EditMode.update;
         saveEditingCallback = callback;
         // Set layout
-        setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
+        setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 
         // Create components
         JPanel editIdPanel;

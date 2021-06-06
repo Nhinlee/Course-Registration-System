@@ -35,7 +35,7 @@ public class EditCourseRegistrationSessionPanel extends JPanel implements Action
         saveEditingCallback = callback;
 
         // Set layout
-        setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
+        setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 
         JPanel editIdPanel;
         JPanel editUsernamePanel;

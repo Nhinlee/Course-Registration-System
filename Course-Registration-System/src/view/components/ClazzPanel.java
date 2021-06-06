@@ -46,13 +46,13 @@ public class ClazzPanel extends BaseTablePanel {
         model.setRowCount(0);
         model.setColumnCount(0);
 
-        List<Clazz> accounts = clazzDAO.getAll();
+        List<Clazz> clazzes = clazzDAO.getAll();
         // Add column name
         for (String column : ColumnNameHelper.clazz) {
             model.addColumn(column);
         }
         // Add data
-        for (Clazz account : accounts) {
+        for (Clazz account : clazzes) {
             model.addRow(account.toRow());
         }
     }

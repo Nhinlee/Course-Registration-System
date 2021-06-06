@@ -30,7 +30,7 @@ public class EditMinistryAccountPanel extends JPanel implements ActionListener {
         editMode = oldAccount == null ? EditMode.addNew : EditMode.update;
         saveEditingCallback = callback;
         // Set layout
-        setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
+        setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 
         JPanel editIdPanel;
         JPanel editUsernamePanel;

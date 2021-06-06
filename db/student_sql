@@ -1,0 +1,7 @@
+INSERT INTO public.student(
+	student_id, username, password, full_name, birth_day, address, class_id)
+	VALUES 
+	('1712640', '1712640', '1712640', 'Lê Chí Nhin', '10-01-1999', 'Dong Bao - Quang Tri', '17CTT5'),
+	('1712641', '1712641', '1712641', 'Lê Chí Nhu', '10-01-1999', 'Dong Bao - Quang Tri', '17CTT5'),
+	('1712642', '1712642', '1712642', 'Lê Chí Cao', '10-01-1999', 'Dong Bao - Quang Tri', '17CTT5')
+	;
