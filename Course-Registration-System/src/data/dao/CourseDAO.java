@@ -57,7 +57,7 @@ public class CourseDAO extends BaseDAO<Course> {
         for (Course course : courses) {
             boolean isRegistered = false;
             for (Registration res : registrations) {
-                if (res.getCourseId().equals(course.getCourseId())) {
+                if (res.getCourse().getCourseId().equals(course.getCourseId())) {
                     isRegistered = true;
                     break;
                 }

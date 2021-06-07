@@ -1,18 +1,20 @@
 <?xml version='1.0' encoding='utf-8'?>
 <!DOCTYPE hibernate-mapping PUBLIC
-    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 
     <class name="data.model.Registration" table="registration" schema="public" catalog="course-registration-db">
         <id name="registrationId">
             <column name="registration_id" sql-type="varchar(45)" length="45"/>
         </id>
-        <property name="courseId">
-            <column name="course_id" sql-type="varchar(45)" length="45"/>
-        </property>
-        <property name="studentId">
-            <column name="student_id" sql-type="varchar(10)" length="10"/>
-        </property>
+
+        <many-to-one name="course" class="data.model.Course" fetch="select" lazy="false">
+            <column name="course_id" not-null="true" length="45"/>
+        </many-to-one>
+
+        <many-to-one name="student" class="data.model.Student" fetch="select" lazy="false">
+            <column name="student_id" not-null="true" length="10"/>
+        </many-to-one>
     </class>
 </hibernate-mapping>

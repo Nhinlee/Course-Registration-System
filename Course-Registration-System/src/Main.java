@@ -1,9 +1,11 @@
 
+import data.dao.RegistrationDAO;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import utils.HibernateUtil;
 import utils.RandomUtils;
 import view.MinistryMenuPanel;
+import view.components.LoginPanel;
 import view.components.student.RegisterCoursePanel;
 
 import javax.swing.*;
@@ -20,7 +22,7 @@ public class Main {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         // Set content pane for the window
-        JPanel panel = new RegisterCoursePanel();
+        JPanel panel = new LoginPanel();
         panel.setOpaque(true);
         frame.setContentPane(panel);
 

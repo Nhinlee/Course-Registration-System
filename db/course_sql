@@ -1,6 +1,31 @@
 INSERT INTO public.course(
 	course_id, course_name, subject_id, lecturers_full_name, max_slot, room_name, day_of_week, part_of_day, semester_id)
 	VALUES 
-	('course_001', 'Nhập Môn Lập Trình 1', 'subject_001', 'Nguyễn Văn A', 5, 'E01', 2, 1, 'semester_002'),
-	('course_002', 'Nhập Môn Lập Trình 2', 'subject_001', 'Nguyễn Văn B', 5, 'E02', 2, 2, 'semester_002')
+	('course_001', 'Nhập Môn Lập Trình 1', 'subject_001', 'Nguyễn Văn B', 5, 'E01', 2, 1, 'semester_002'),
+	('course_002', 'Nhập Môn Lập Trình 2', 'subject_001', 'Nguyễn Văn B', 5, 'E01', 2, 2, 'semester_002'),
+	('course_003', 'Nhập Môn Lập Trình 3', 'subject_001', 'Nguyễn Văn BB', 5, 'E01', 2, 3, 'semester_002'),
+	('course_004', 'Nhập Môn Lập Trình 4', 'subject_001', 'Nguyễn Văn BB', 5, 'E01', 2, 4, 'semester_002'),
+	
+	('course_005', 'Mạng Máy Tính 1', 'subject_002', 'Nguyễn Văn C', 5, 'E02', 2, 1, 'semester_002'),
+	('course_006', 'Mạng Máy Tính 2', 'subject_002', 'Nguyễn Văn C', 5, 'E02', 2, 2, 'semester_002'),
+	('course_007', 'Mạng Máy Tính 3', 'subject_002', 'Nguyễn Văn CC', 5, 'E02', 2, 3, 'semester_002'),
+	('course_008', 'Mạng Máy Tính 4', 'subject_002', 'Nguyễn Văn CC', 5, 'E02', 2, 4, 'semester_002'),
+	
+	
+	('course_009', 'Hệ Điều Hành 1', 'subject_003', 'Nguyễn Văn D', 5, 'E03', 2, 1, 'semester_002'),
+	('course_010', 'Hệ Điều Hành 2', 'subject_003', 'Nguyễn Văn D', 5, 'E03', 2, 2, 'semester_002'),
+	('course_011', 'Hệ Điều Hành 3', 'subject_003', 'Nguyễn Văn DD', 5, 'E03', 2, 3, 'semester_002'),
+	('course_012', 'Hệ Điều Hành 4', 'subject_003', 'Nguyễn Văn DD', 5, 'E03', 2, 4, 'semester_002'),
+	
+	
+	('course_013', 'Tư Tưởng Hồ Chí Minh 1', 'subject_004', 'Nguyễn Văn E', 5, 'E04', 2, 1, 'semester_002'),
+	('course_014', 'Tư Tưởng Hồ Chí Minh 2', 'subject_004', 'Nguyễn Văn E', 5, 'E04', 2, 2, 'semester_002'),
+	('course_015', 'Tư Tưởng Hồ Chí Minh 3', 'subject_004', 'Nguyễn Văn EE', 5, 'E04', 2, 3, 'semester_002'),
+	('course_016', 'Tư Tưởng Hồ Chí Minh 4', 'subject_004', 'Nguyễn Văn EE', 5, 'E04', 2, 4, 'semester_002'),
+	
+	('course_017', 'Luận Sáng Tạo 1', 'subject_005', 'Nguyễn Văn F', 5, 'E01', 3, 1, 'semester_002'),
+	('course_018', 'Luận Sáng Tạo 2', 'subject_005', 'Nguyễn Văn F', 5, 'E01', 3, 2, 'semester_002'),
+	('course_019', 'Luận Sáng Tạo 3', 'subject_005', 'Nguyễn Văn F', 5, 'E01', 3, 3, 'semester_002'),
+	('course_020', 'Luận Sáng Tạo 4', 'subject_005', 'Nguyễn Văn F', 5, 'E01', 3, 4, 'semester_002')
+	
 	;

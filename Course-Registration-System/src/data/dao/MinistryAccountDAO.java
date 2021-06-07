@@ -29,4 +29,17 @@ public class MinistryAccountDAO extends BaseDAO<MinistryAccount> {
         );
         return account[0];
     }
+
+    public boolean login(String username, String password) {
+        final List<MinistryAccount> accounts = new ArrayList<>();
+        HibernateUtil.openSessionAndDoJob(session -> {
+            String getAllHQL = String.format(
+                    "select mi from MinistryAccount mi where mi.username = '%s' and mi.password = '%s'",
+                    username,
+                    password);
+            Query query = session.createQuery(getAllHQL);
+            accounts.addAll(query.list());
+        });
+        return accounts.size() > 0;
+    }
 }

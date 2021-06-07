@@ -32,10 +32,25 @@ public class StudentDAO extends BaseDAO<Student> {
     public List<Student> getStudentByClassId(String classId) {
         final List<Student> students = new ArrayList<>();
         HibernateUtil.openSessionAndDoJob(session -> {
-            String getStudentByClassIdHQL = String.format("select st from Student st where st.classId = '%s'", classId);
+            String getStudentByClassIdHQL = String.format(
+                    "select st from Student st where st.classId = '%s'",
+                    classId);
             Query query = session.createQuery(getStudentByClassIdHQL);
             students.addAll(query.list());
         });
         return students;
+    }
+
+    public Student login(String username, String password) {
+        final List<Student> students = new ArrayList<>();
+        HibernateUtil.openSessionAndDoJob(session -> {
+            String getStudentByUsernamePasswordHQL = String.format(
+                    "select st from Student st where st.username = '%s' and st.password = '%s'",
+                    username,
+                    password);
+            Query query = session.createQuery(getStudentByUsernamePasswordHQL);
+            students.addAll(query.list());
+        });
+        return students.size() > 0 ? students.get(0) : null;
     }
 }

@@ -1,8 +1,12 @@
 package view.components.student;
 
 import data.dao.CourseDAO;
+import data.dao.RegistrationDAO;
 import data.model.Course;
+import data.model.Registration;
+import data.model.Student;
 import utils.ColumnNameHelper;
+import utils.RandomUtils;
 import utils.UIDecoratorUtil;
 
 import javax.swing.*;
@@ -10,17 +14,22 @@ import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.util.List;
 
 public class RegisterCoursePanel extends JPanel implements ActionListener {
 
     // Student Id
-    final String studentId = "1712640";
-
+    final Student currentStudent;
     final String strRegisterButton = "Register This Course";
 
     // DAO
     final CourseDAO courseDAO = new CourseDAO();
+    final RegistrationDAO registrationDAO = new RegistrationDAO();
+
+    // Cached Data
+    final List<Registration> registrations = new ArrayList<>();
+    final List<Course> courses = new ArrayList<>();
 
     // Components
     private DefaultTableModel registeredCourseModel;
@@ -29,7 +38,8 @@ public class RegisterCoursePanel extends JPanel implements ActionListener {
     private JTable registeredCoursesTable;
     private JButton registerButton;
 
-    public RegisterCoursePanel() {
+    public RegisterCoursePanel(Student student) {
+        this.currentStudent = student;
         // Layout
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 
@@ -49,6 +59,7 @@ public class RegisterCoursePanel extends JPanel implements ActionListener {
         // Course Table
         registeredCourseModel = new DefaultTableModel();
         registeredCoursesTable = new JTable(registeredCourseModel);
+        resetRegisteredCourseTableData();
         // -- -- Logic interactive
         registeredCoursesTable.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         registeredCoursesTable.setRowSelectionAllowed(true);
@@ -95,7 +106,7 @@ public class RegisterCoursePanel extends JPanel implements ActionListener {
         registerButton.setBorder(UIDecoratorUtil.customBorder());
         registerButton.setFont(UIDecoratorUtil.customFont());
         JPanel buttonPanel = new JPanel(new BorderLayout());
-        buttonPanel.setBorder(BorderFactory.createEmptyBorder(16,16,16,0));
+        buttonPanel.setBorder(BorderFactory.createEmptyBorder(16, 16, 16, 0));
         buttonPanel.add(registerButton, BorderLayout.LINE_END);
 
         // Lay them out
@@ -109,11 +120,28 @@ public class RegisterCoursePanel extends JPanel implements ActionListener {
         // -------------------------------------------------------------------------------
     }
 
+    private void resetRegisteredCourseTableData() {
+        registeredCourseModel.setRowCount(0);
+        registeredCourseModel.setColumnCount(0);
+
+        registrations.clear();
+        registrations.addAll(registrationDAO.getAllCourseRegisteredByStudentId(currentStudent.getStudentId()));
+        // Add Column name
+        for (String column : ColumnNameHelper.courseStudentView) {
+            registeredCourseModel.addColumn(column);
+        }
+        // Add data
+        for (Registration regis : registrations) {
+            registeredCourseModel.addRow(regis.getCourse().toStudentViewRow());
+        }
+    }
+
     private void resetCourseTableData() {
         coursesModel.setRowCount(0);
         coursesModel.setColumnCount(0);
 
-        List<Course> courses = courseDAO.getAllCourseRemainByStudentId(this.studentId);
+        courses.clear();
+        courses.addAll(courseDAO.getAllCourseRemainByStudentId(this.currentStudent.getStudentId()));
         // Add column name
         for (String column : ColumnNameHelper.courseStudentView) {
             coursesModel.addColumn(column);
@@ -126,6 +154,37 @@ public class RegisterCoursePanel extends JPanel implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        String command = e.getActionCommand();
+        if (command.equals(strRegisterButton)) {
+            // Give
+            int selectedRowIndex = coursesTable.getSelectedRow();
+            Course registerCourse = courses.get(selectedRowIndex);
 
+            // Exception
+            for (Registration registration :
+                    registrations) {
+                if (registration.getCourse().getSubject().equals(registerCourse.getSubject())) {
+                    JOptionPane.showMessageDialog(this, "Duplicate Subject, Choose Another Subject / Course");
+                    return;
+                }
+
+                if (registration.getCourse().getPartOfDay() == registerCourse.getPartOfDay()
+                        && registration.getCourse().getDayOfWeek() == registerCourse.getDayOfWeek()) {
+                    JOptionPane.showMessageDialog(this, "Duplicate schedule with other subjects");
+                    return;
+                }
+            }
+
+            // Add new registration
+            Registration newRegistration = new Registration();
+            newRegistration.setRegistrationId(RandomUtils.randomId());
+            newRegistration.setCourse(registerCourse);
+            newRegistration.setStudent(currentStudent);
+            registrationDAO.insert(newRegistration);
+
+            // Reset Table Data
+            resetRegisteredCourseTableData();
+            resetCourseTableData();
+        }
     }
 }

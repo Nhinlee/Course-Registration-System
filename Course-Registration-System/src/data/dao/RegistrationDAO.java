@@ -34,7 +34,7 @@ public class RegistrationDAO extends BaseDAO<Registration> {
     public List<Registration> getAllCourseRegisteredByStudentId(String studentId) {
         final List<Registration> registrations = new ArrayList<>();
         HibernateUtil.openSessionAndDoJob(session -> {
-            String getAllHQL = String.format("select res from Registration res where res.studentId = '%s'", studentId);
+            String getAllHQL = String.format("select res from Registration res where res.student.studentId = '%s'", studentId);
             Query query = session.createQuery(getAllHQL);
             registrations.addAll(query.list());
         });

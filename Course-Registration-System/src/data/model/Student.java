@@ -100,4 +100,17 @@ public class Student extends BaseModel {
                 classId,
         };
     }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "studentId='" + studentId + '\'' +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", fullName='" + fullName + '\'' +
+                ", birthDay=" + birthDay +
+                ", address='" + address + '\'' +
+                ", classId='" + classId + '\'' +
+                '}';
+    }
 }
