@@ -2,6 +2,7 @@ package data.dao;
 
 import data.dao.base.BaseDAO;
 import data.dao.base.IBaseDAO;
+import data.model.MinistryAccount;
 import data.model.Subject;
 import org.hibernate.query.Query;
 import utils.HibernateUtil;
@@ -16,6 +17,17 @@ public class SubjectDAO extends BaseDAO<Subject> {
         HibernateUtil.openSessionAndDoJob(session -> {
             String hql = "from Subject";
             Query query = session.createQuery(hql);
+            subjects.addAll(query.list());
+        });
+        return subjects;
+    }
+
+    @Override
+    public List<Subject> getBySearchText(String searchText) {
+        final List<Subject> subjects = new ArrayList<>();
+        HibernateUtil.openSessionAndDoJob(session -> {
+            String getAllHQL = "select s from Subject s where s.subjectName like '%" + searchText + "%'";
+            Query query = session.createQuery(getAllHQL);
             subjects.addAll(query.list());
         });
         return subjects;

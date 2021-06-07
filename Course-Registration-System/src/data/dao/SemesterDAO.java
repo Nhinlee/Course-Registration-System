@@ -23,6 +23,11 @@ public class SemesterDAO extends BaseDAO<Semester> {
     }
 
     @Override
+    public List<Semester> getBySearchText(String searchText) {
+        return null;
+    }
+
+    @Override
     public Semester getById(String id) {
         final Semester[] semesters = {null};
         HibernateUtil.openSessionAndDoJob(

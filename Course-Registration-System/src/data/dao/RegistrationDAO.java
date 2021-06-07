@@ -23,6 +23,11 @@ public class RegistrationDAO extends BaseDAO<Registration> {
     }
 
     @Override
+    public List<Registration> getBySearchText(String searchText) {
+        return null;
+    }
+
+    @Override
     public Registration getById(String id) {
         final Registration[] registrations = {null};
         HibernateUtil.openSessionAndDoJob(

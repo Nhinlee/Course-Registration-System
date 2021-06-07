@@ -37,7 +37,7 @@ public class ClazzPanel extends BaseTablePanel {
     }
 
     @Override
-    protected void onSearch() {
+    protected void onSearch(String textSearch) {
 
     }
 

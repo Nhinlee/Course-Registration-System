@@ -36,8 +36,19 @@ public class SubjectsPanel extends BaseTablePanel {
     }
 
     @Override
-    protected void onSearch() {
+    protected void onSearch(String textSearch) {
+        List<Subject> subjects = subjectDAO.getBySearchText(textSearch);
+        model.setRowCount(0);
+        model.setColumnCount(0);
+        // Add column name
+        for (String column : ColumnNameHelper.subject) {
+            model.addColumn(column);
+        }
 
+        // Add data
+        for (Subject subject : subjects) {
+            model.addRow(subject.toRow());
+        }
     }
 
     @Override

@@ -22,6 +22,11 @@ public class CourseRegistrationSessionDAO extends BaseDAO<CourseRegistrationSess
     }
 
     @Override
+    public List<CourseRegistrationSession> getBySearchText(String searchText) {
+        return null;
+    }
+
+    @Override
     public CourseRegistrationSession getById(String id) {
         final CourseRegistrationSession[] sessions = {null};
         HibernateUtil.openSessionAndDoJob(

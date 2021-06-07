@@ -19,9 +19,10 @@ import java.util.List;
 
 public class RegisterCoursePanel extends JPanel implements ActionListener {
 
-    // Student Id
     final Student currentStudent;
     final String strRegisterButton = "Register This Course";
+    final String strRemoveRegisteredButton = "Remove This Course";
+    final int maxRegisteredCourse = 4;
 
     // DAO
     final CourseDAO courseDAO = new CourseDAO();
@@ -34,9 +35,11 @@ public class RegisterCoursePanel extends JPanel implements ActionListener {
     // Components
     private DefaultTableModel registeredCourseModel;
     private DefaultTableModel coursesModel;
+    private JLabel registerLabel;
     private JTable coursesTable;
     private JTable registeredCoursesTable;
-    private JButton registerButton;
+    private JButton btnRegister;
+    private JButton btnRemoveRegisteredCourse;
 
     public RegisterCoursePanel(Student student) {
         this.currentStudent = student;
@@ -53,9 +56,9 @@ public class RegisterCoursePanel extends JPanel implements ActionListener {
         // ------------------------------------------------------------------------
 
         // Label
-        JLabel registeredCourseLabel = new JLabel("Registered Course");
-        registeredCourseLabel.setFont(new Font("Aria", Font.BOLD, 18));
-        registeredCourseLabel.setBorder(BorderFactory.createEmptyBorder(16, 16, 16, 16));
+        JLabel registerLabel = new JLabel("Registered Course");
+        registerLabel.setFont(new Font("Aria", Font.BOLD, 18));
+        registerLabel.setBorder(BorderFactory.createEmptyBorder(16, 16, 16, 16));
         // Course Table
         registeredCourseModel = new DefaultTableModel();
         registeredCoursesTable = new JTable(registeredCourseModel);
@@ -71,9 +74,9 @@ public class RegisterCoursePanel extends JPanel implements ActionListener {
         registeredCoursesTable.setRowHeight(32);
         //
         JPanel registeredCoursePanel = new JPanel(new BorderLayout());
-        registeredCoursePanel.add(registeredCourseLabel, BorderLayout.PAGE_START);
+        registeredCoursePanel.add(registerLabel, BorderLayout.PAGE_START);
         registeredCoursePanel.add(new JScrollPane(registeredCoursesTable), BorderLayout.CENTER);
-        registeredCoursePanel.setPreferredSize(new Dimension(1280, 200));
+        registeredCoursePanel.setPreferredSize(new Dimension(1280, 240));
         // ------------------------------------------------------------------------------
 
         // Label
@@ -99,21 +102,32 @@ public class RegisterCoursePanel extends JPanel implements ActionListener {
         tablePanel.add(new JScrollPane(coursesTable), BorderLayout.CENTER);
         // ------------------------------------------------------------------------------
 
+        // Remove Registered Course Button
+        btnRemoveRegisteredCourse = new JButton(strRemoveRegisteredButton);
+        btnRemoveRegisteredCourse.setActionCommand(strRemoveRegisteredButton);
+        btnRemoveRegisteredCourse.addActionListener(this);
+        btnRemoveRegisteredCourse.setBorder(UIDecoratorUtil.customBorder());
+        btnRemoveRegisteredCourse.setFont(UIDecoratorUtil.customFont());
+        JPanel removeBtnPanel = new JPanel(new BorderLayout());
+        removeBtnPanel.setBorder(BorderFactory.createEmptyBorder(16, 16, 16, 0));
+        removeBtnPanel.add(btnRemoveRegisteredCourse, BorderLayout.LINE_END);
+
         // Register Button
-        registerButton = new JButton(strRegisterButton);
-        registerButton.setActionCommand(strRegisterButton);
-        registerButton.addActionListener(this);
-        registerButton.setBorder(UIDecoratorUtil.customBorder());
-        registerButton.setFont(UIDecoratorUtil.customFont());
-        JPanel buttonPanel = new JPanel(new BorderLayout());
-        buttonPanel.setBorder(BorderFactory.createEmptyBorder(16, 16, 16, 0));
-        buttonPanel.add(registerButton, BorderLayout.LINE_END);
+        btnRegister = new JButton(strRegisterButton);
+        btnRegister.setActionCommand(strRegisterButton);
+        btnRegister.addActionListener(this);
+        btnRegister.setBorder(UIDecoratorUtil.customBorder());
+        btnRegister.setFont(UIDecoratorUtil.customFont());
+        JPanel registerBtnPanel = new JPanel(new BorderLayout());
+        registerBtnPanel.setBorder(BorderFactory.createEmptyBorder(16, 16, 16, 0));
+        registerBtnPanel.add(btnRegister, BorderLayout.LINE_END);
 
         // Lay them out
         add(titlePanel);
         add(registeredCoursePanel);
+        add(removeBtnPanel);
         add(tablePanel);
-        add(buttonPanel);
+        add(registerBtnPanel);
 
         setBorder(BorderFactory.createEmptyBorder(16, 16, 16, 16));
         setPreferredSize(new Dimension(1280, 900));
@@ -161,6 +175,11 @@ public class RegisterCoursePanel extends JPanel implements ActionListener {
             Course registerCourse = courses.get(selectedRowIndex);
 
             // Exception
+            if (registrations.size() >= maxRegisteredCourse) {
+                JOptionPane.showMessageDialog(this, "Max Registered Course!");
+                return;
+            }
+
             for (Registration registration :
                     registrations) {
                 if (registration.getCourse().getSubject().equals(registerCourse.getSubject())) {
@@ -181,6 +200,20 @@ public class RegisterCoursePanel extends JPanel implements ActionListener {
             newRegistration.setCourse(registerCourse);
             newRegistration.setStudent(currentStudent);
             registrationDAO.insert(newRegistration);
+
+            // Reset Table Data
+            resetRegisteredCourseTableData();
+            resetCourseTableData();
+        }
+
+        if (command.equals(strRemoveRegisteredButton)) {
+            // Give
+            int selectedRowIndex = registeredCoursesTable.getSelectedRow();
+            if (selectedRowIndex < 0) return;
+            Registration selectedRegistration = registrations.get(selectedRowIndex);
+
+            // Delete
+            registrationDAO.delete(selectedRegistration.getId());
 
             // Reset Table Data
             resetRegisteredCourseTableData();

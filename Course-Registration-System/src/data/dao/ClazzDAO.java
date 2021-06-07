@@ -21,6 +21,11 @@ public class ClazzDAO extends BaseDAO<Clazz> {
     }
 
     @Override
+    public List<Clazz> getBySearchText(String searchText) {
+        return null;
+    }
+
+    @Override
     public Clazz getById(String id) {
         final Clazz[] clazzes = {null};
         HibernateUtil.openSessionAndDoJob(

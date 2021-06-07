@@ -30,6 +30,17 @@ public class MinistryAccountDAO extends BaseDAO<MinistryAccount> {
         return account[0];
     }
 
+    @Override
+    public List<MinistryAccount> getBySearchText(String textSearch) {
+        final List<MinistryAccount> accounts = new ArrayList<>();
+        HibernateUtil.openSessionAndDoJob(session -> {
+            String getAllHQL = "select ac from MinistryAccount ac where ac.username like '%" + textSearch + "%'";
+            Query query = session.createQuery(getAllHQL);
+            accounts.addAll(query.list());
+        });
+        return accounts;
+    }
+
     public boolean login(String username, String password) {
         final List<MinistryAccount> accounts = new ArrayList<>();
         HibernateUtil.openSessionAndDoJob(session -> {

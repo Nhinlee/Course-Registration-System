@@ -1,6 +1,7 @@
 package data.dao;
 
 import data.dao.base.BaseDAO;
+import data.model.MinistryAccount;
 import data.model.Student;
 import org.hibernate.query.Query;
 import utils.HibernateUtil;
@@ -14,6 +15,17 @@ public class StudentDAO extends BaseDAO<Student> {
         final List<Student> students = new ArrayList<>();
         HibernateUtil.openSessionAndDoJob(session -> {
             String getAllHQL = "from Student";
+            Query query = session.createQuery(getAllHQL);
+            students.addAll(query.list());
+        });
+        return students;
+    }
+
+    @Override
+    public List<Student> getBySearchText(String searchText) {
+        final List<Student> students = new ArrayList<>();
+        HibernateUtil.openSessionAndDoJob(session -> {
+            String getAllHQL = "select st from Student st where st.fullName like '%" + searchText + "%'";
             Query query = session.createQuery(getAllHQL);
             students.addAll(query.list());
         });

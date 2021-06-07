@@ -6,16 +6,23 @@
   <component name="ChangeListManager">
     <list default="true" id="f16ff818-d8f3-480d-90ea-b529634ec9fa" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Course-Registration-System/data/mapping/Registration.hbm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Course-Registration-System/data/mapping/Registration.hbm.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/dao/ClazzDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/dao/ClazzDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/data/dao/CourseDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/dao/CourseDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/dao/CourseRegistrationSessionDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/dao/CourseRegistrationSessionDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/data/dao/MinistryAccountDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/dao/MinistryAccountDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/data/dao/RegistrationDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/dao/RegistrationDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/dao/SemesterDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/dao/SemesterDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/data/dao/StudentDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/dao/StudentDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/mapping/Registration.hbm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/mapping/Registration.hbm.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/model/Registration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/model/Registration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/model/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/model/Student.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/components/LoginPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/components/LoginPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/dao/SubjectDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/dao/SubjectDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/dao/base/IBaseDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/dao/base/IBaseDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/base/BaseTablePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/base/BaseTablePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/components/ministry/ClazzPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/components/ministry/ClazzPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/components/ministry/CourseRegistrationSessionsPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/components/ministry/CourseRegistrationSessionsPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/components/ministry/CoursesPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/components/ministry/CoursesPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/components/ministry/MinistryAccountsPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/components/ministry/MinistryAccountsPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/components/ministry/SemestersPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/components/ministry/SemestersPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/components/ministry/StudentsPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/components/ministry/StudentsPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/components/ministry/SubjectsPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/components/ministry/SubjectsPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/components/student/RegisterCoursePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/components/student/RegisterCoursePanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../db/course_sql" beforeDir="false" afterPath="$PROJECT_DIR$/../db/course_sql" afterDir="false" />
     </list>
@@ -189,7 +196,7 @@
       <workItem from="1622722592047" duration="11094000" />
       <workItem from="1622956486395" duration="12000" />
       <workItem from="1622972487852" duration="15560000" />
-      <workItem from="1623048659298" duration="11285000" />
+      <workItem from="1623048659298" duration="18878000" />
     </task>
     <servers />
   </component>

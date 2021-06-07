@@ -105,6 +105,11 @@ public abstract class BaseTablePanel extends JPanel implements ActionListener, S
         final String command = e.getActionCommand();
         int selectedRow = table.getSelectedRow();
 
+        // Search
+        if (command.equals(searchString)) {
+            onSearch(tfSearch.getText());
+        }
+
         // Add new
         if (command.equals(addNewString)) {
             onAddNew();
@@ -130,11 +135,6 @@ public abstract class BaseTablePanel extends JPanel implements ActionListener, S
         if (command.equals(updateString)) {
             onUpdate(id);
         }
-
-        // Search
-        if (command.equals(searchString)) {
-            onSearch();
-        }
     }
 
     protected abstract void onAddNew();
@@ -143,7 +143,7 @@ public abstract class BaseTablePanel extends JPanel implements ActionListener, S
 
     protected abstract void onUpdate(String id);
 
-    protected abstract void onSearch();
+    protected abstract void onSearch(String textSearch);
 
     protected abstract void resetTableData();
 

@@ -2,10 +2,14 @@ package view.components.ministry;
 
 import data.dao.CourseDAO;
 import data.model.Course;
+import data.model.MinistryAccount;
+import org.hibernate.query.Query;
 import utils.ColumnNameHelper;
+import utils.HibernateUtil;
 import view.base.BaseTablePanel;
 import view.components.ministry.edit_panels.EditCoursePanel;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class CoursesPanel extends BaseTablePanel {
@@ -36,8 +40,19 @@ public class CoursesPanel extends BaseTablePanel {
     }
 
     @Override
-    protected void onSearch() {
+    protected void onSearch(String textSearch) {
+        model.setRowCount(0);
+        model.setColumnCount(0);
 
+        List<Course> courses = courseDAO.getBySearchText(textSearch);
+        // Add column name
+        for (String column : ColumnNameHelper.course) {
+            model.addColumn(column);
+        }
+        // Add data
+        for (Course course : courses) {
+            model.addRow(course.toRow());
+        }
     }
 
     @Override

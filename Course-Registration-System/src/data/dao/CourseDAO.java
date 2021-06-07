@@ -2,6 +2,7 @@ package data.dao;
 
 import data.dao.base.BaseDAO;
 import data.model.Course;
+import data.model.MinistryAccount;
 import data.model.Registration;
 import data.model.Semester;
 import org.hibernate.query.Query;
@@ -18,6 +19,17 @@ public class CourseDAO extends BaseDAO<Course> {
         HibernateUtil.openSessionAndDoJob(session -> {
 
             String getAllHQL = "from Course";
+            Query query = session.createQuery(getAllHQL);
+            courses.addAll(query.list());
+        });
+        return courses;
+    }
+
+    @Override
+    public List<Course> getBySearchText(String searchText) {
+        final List<Course> courses = new ArrayList<>();
+        HibernateUtil.openSessionAndDoJob(session -> {
+            String getAllHQL = "select c from Course c where c.courseName like '%" + searchText + "%'";
             Query query = session.createQuery(getAllHQL);
             courses.addAll(query.list());
         });

@@ -65,8 +65,19 @@ public class StudentsPanel extends BaseTablePanel {
     }
 
     @Override
-    protected void onSearch() {
+    protected void onSearch(String textSearch) {
+        model.setRowCount(0);
+        model.setColumnCount(0);
 
+        List<Student> students = studentDAO.getBySearchText(textSearch);
+        // Add column name
+        for (String column : ColumnNameHelper.student) {
+            model.addColumn(column);
+        }
+        // Add data
+        for (Student student : students) {
+            model.addRow(student.toRow());
+        }
     }
 
     @Override

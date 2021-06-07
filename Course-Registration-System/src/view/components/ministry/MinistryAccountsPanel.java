@@ -37,8 +37,18 @@ public class MinistryAccountsPanel extends BaseTablePanel {
     }
 
     @Override
-    protected void onSearch() {
-
+    protected void onSearch(String textSearch) {
+        List<MinistryAccount> accounts = ministryAccountDAO.getBySearchText(textSearch);
+        model.setRowCount(0);
+        model.setColumnCount(0);
+        // Add column name
+        for (String column : ColumnNameHelper.ministryAccount) {
+            model.addColumn(column);
+        }
+        // Add data
+        for (MinistryAccount account : accounts) {
+            model.addRow(account.toRow());
+        }
     }
 
     @Override
